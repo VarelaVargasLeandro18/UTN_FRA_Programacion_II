@@ -10,11 +10,7 @@ namespace Entidades
     {
 
         public static void Main()
-        {
-            
-
-
-        }
+        {}
 
     }
 }

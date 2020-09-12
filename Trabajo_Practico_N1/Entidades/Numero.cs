@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Entidades
 {
@@ -10,9 +11,7 @@ namespace Entidades
         {
             set
             {
-
                 this.numero = this.ValidarNumero(value);
-
             }
 
         }
@@ -32,63 +31,118 @@ namespace Entidades
             this.SetNumero = strNumero;
         }
 
-        public String BinarioDecimal ( String binario )
+        public String BinarioDecimal(String binario)
         {
 
+            Int64 aDecimal = 0;
 
+            if (this.EsBinario(binario))
+            {
+
+                for ( Int32 i = binario.ToCharArray().Length; i > 0; i-- )
+                {
+
+                    Int32 elevado = binario.ToCharArray().Length - i;
+
+                    Char charBinario = binario.ToCharArray()[i - 1];
+
+                    aDecimal += ( Int32.Parse( charBinario.ToString() ) * (Int64)Math.Pow ( 2, elevado ) );
+
+                }
+
+            }
+            else
+                return "Valor inválido";
+
+            return aDecimal.ToString();
 
         }
 
-        public String DecimalBinario ( double numero )
+        public String DecimalBinario(Double numero)
         {
-
-
-
+            return this.DecimalBinario(numero.ToString());
         }
 
-        public String DecimalBinario ( String numero )
+        public String DecimalBinario(String numero)
         {
 
+            String aBinario = "";
+            Char[] arrBinario;
+            Int64 auxINumero;
+            Int64 iBit;
 
+            if ( Int64.TryParse(numero, out auxINumero) && (numero.ElementAt(0) != '-') )
+            {
+
+                while ( auxINumero > 0 )
+                {
+
+                    iBit = auxINumero % 2;
+                    aBinario += iBit;
+                    auxINumero /= 2;
+                
+                }
+
+            }
+            else
+                return "Valor inválido";
+
+            arrBinario = aBinario.ToCharArray();
+            
+            Array.Reverse(arrBinario);
+
+            return new String (arrBinario);
 
         }
-
         private bool EsBinario ( String binario )
         {
 
+            Boolean isBinary = true;
 
+            foreach ( Char charBinario in binario.ToCharArray() )
+            {
+
+                if ( !(charBinario == '0' || charBinario == '1') )
+                {
+
+                    isBinary = false;
+                    break;
+
+                }
+
+
+            }
+
+            return isBinary;
 
         }
 
-        public static Double operator -( Numero n1, Numero n2 )
+        public static Double operator -(Numero n1, Numero n2)
+        {
+            return n1.numero - n2.numero;
+        }
+
+        public static Double operator *(Numero n1, Numero n2)
+        {
+            return n1.numero * n2.numero;
+        }
+
+        public static Double operator /(Numero n1, Numero n2)
         {
 
+            if (n2.numero == 0.0)
+                return Double.MinValue;
 
+            return n1.numero / n2.numero;
 
         }
 
-        public static Double operator *( Numero n1, Numero n2 )
+        public static Double operator +(Numero n1, Numero n2)
         {
-
-
-
+            return n1.numero + n2.numero;
         }
 
-        public static Double operator /( Numero n1, Numero n2 )
-        {
-
-
-
-        }
-
-        public static Double operator +( Numero n1, Numero n2 )
-        {
-
-
-
-        }
-
-        private Double ValidarNumero ( String sNumero )
+        public Double ValidarNumero ( String sNumero )
         {
 
             Double toRet;
