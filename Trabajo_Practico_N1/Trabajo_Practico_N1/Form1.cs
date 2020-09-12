@@ -24,5 +24,9 @@ namespace Trabajo_Practico_N1
             
         }
 
+        private void btnOperar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
