@@ -1,0 +1,6 @@
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\bin\Release\Entidades.exe.config
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\bin\Release\Entidades.exe
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\bin\Release\Entidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\obj\Release\Entidades.exe
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Entidades\obj\Release\Entidades.pdb

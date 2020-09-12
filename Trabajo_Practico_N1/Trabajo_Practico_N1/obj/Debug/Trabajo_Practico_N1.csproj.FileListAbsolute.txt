@@ -1,0 +1,14 @@
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Trabajo_Practico_N1.exe.config
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Trabajo_Practico_N1.exe
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Trabajo_Practico_N1.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.csprojAssemblyReference.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.Properties.Resources.resources
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.csproj.GenerateResource.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.csproj.CoreCompileInputs.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.exe
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.FormCalculadora.resources
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Entidades.exe
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Entidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\bin\Debug\Entidades.exe.config
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\Trabajo_Practico_N1\Trabajo_Practico_N1\obj\Debug\Trabajo_Practico_N1.csproj.CopyComplete
