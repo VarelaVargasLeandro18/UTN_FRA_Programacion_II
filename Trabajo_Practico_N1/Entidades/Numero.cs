@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 
+
 namespace Entidades
 {
     public class Numero
@@ -52,7 +53,7 @@ namespace Entidades
 
             }
             else
-                return "Valor inválido";
+                return "Valor Inválido";
 
             return aDecimal.ToString();
 
@@ -71,6 +72,9 @@ namespace Entidades
             Int64 auxINumero;
             Int64 iBit;
 
+            if (String.IsNullOrEmpty(numero) || numero == "0")
+                return "0";
+            
             if ( Int64.TryParse(numero, out auxINumero) && (numero.ElementAt(0) != '-') )
             {
 
@@ -85,15 +89,15 @@ namespace Entidades
 
             }
             else
-                return "Valor inválido";
+                return "Valor Inválido";
 
             arrBinario = aBinario.ToCharArray();
-            
             Array.Reverse(arrBinario);
 
             return new String (arrBinario);
 
         }
+        
         private bool EsBinario ( String binario )
         {
 

@@ -11,7 +11,7 @@ namespace Entidades
 
         public static Double Operar(Numero num1, Numero num2, String operador)
         {
-            Char cOperador = operador.ToCharArray()[0];
+            Char cOperador = ( String.IsNullOrEmpty(operador) ) ? ' ' : operador.ToCharArray()[0];
             operador = Calculadora.ValidarOperador(cOperador);
             cOperador = operador.ToCharArray()[0];
 
@@ -36,9 +36,7 @@ namespace Entidades
 
         private static String ValidarOperador(Char operador)
         {
-
-            return (operador == '+' || operador == '-' || operador == '/' || operador == '*') ? operador.ToString() : '+'.ToString();
-
+            return ( operador == '-' || operador == '/' || operador == '*') ? operador.ToString() : '+'.ToString();
         }
 
     }
