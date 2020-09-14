@@ -146,7 +146,7 @@ namespace Entidades
             return n1.numero + n2.numero;
         }
 
-        public Double ValidarNumero ( String sNumero )
+        private Double ValidarNumero ( String sNumero )
         {
 
             Double toRet;
