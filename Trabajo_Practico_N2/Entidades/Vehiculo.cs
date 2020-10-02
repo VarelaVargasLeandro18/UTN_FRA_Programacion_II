@@ -22,6 +22,13 @@ namespace Entidades
         string chasis;
         ConsoleColor color;
 
+        protected Vehiculo(string chasis, EMarca marca, ConsoleColor color)
+        {
+            this.chasis = chasis;
+            this.marca = marca;
+            this.color = color;
+        }
+
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
