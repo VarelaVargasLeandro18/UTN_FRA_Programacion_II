@@ -172,6 +172,7 @@ namespace Trabajo_Practico_N1
             this.Name = "FormCalculadora";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = " Calculadora de Varela Vargas Leandro del curso 2°A";
+            this.Load += new System.EventHandler(this.FormCalculadora_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

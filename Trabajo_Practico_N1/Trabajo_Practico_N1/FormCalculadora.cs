@@ -68,5 +68,10 @@ namespace Trabajo_Practico_N1
         {
             this.lblResultado.Text = this.numConversor.BinarioDecimal(this.lblResultado.Text);
         }
+
+        private void FormCalculadora_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
