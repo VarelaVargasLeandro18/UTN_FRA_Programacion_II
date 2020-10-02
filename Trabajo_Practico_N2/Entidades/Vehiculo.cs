@@ -31,9 +31,9 @@ namespace Entidades
         /// Publica todos los datos del Vehiculo.
         /// </summary>
         /// <returns></returns>
-        public string Mostrar()
+        public virtual string Mostrar()
         {
-            return this;
+            return ((string)this);
         }
 
         public static explicit operator string(Vehiculo p)
@@ -66,7 +66,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return !(v1.chasis == v2.chasis);
         }
     }
 }

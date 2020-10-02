@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace Entidades
 {
-    class Sedan : Vehiculo
+    public class Sedan : Vehiculo
     {
         public enum ETipo { CuatroPuertas, CincoPuertas }
         ETipo tipo;
@@ -28,7 +29,7 @@ namespace Entidades
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
-        protected override short Tamanio
+        public override ETamanio Tamanio
         {
             get
             {
@@ -36,18 +37,18 @@ namespace Entidades
             }
         }
 
-        public override sealed string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(this);
-            sb.AppendLine("TAMAÑO : {0}", this.Tamanio);
+            sb.AppendLine(((string)this));
+            sb.AppendFormat("TAMAÑO : {0}\n", this.Tamanio);
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
             sb.AppendLine("---------------------");
 
-            return sb;
+            return sb.ToString();
         }
     }
 }
