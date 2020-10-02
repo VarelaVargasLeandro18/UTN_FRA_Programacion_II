@@ -26,6 +26,12 @@ namespace Entidades
             tipo = ETipo.CuatroPuertas;
         }
 
+        public Sedan (EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
+            : base(chasis, marca, color)
+        {
+            this.tipo = tipo;
+        }
+
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
