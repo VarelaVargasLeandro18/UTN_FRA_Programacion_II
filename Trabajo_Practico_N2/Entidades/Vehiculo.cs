@@ -22,6 +22,12 @@ namespace Entidades
         string chasis;
         ConsoleColor color;
 
+        /// <summary>
+        /// Constructor que utilizarán las clases que hereden de Vehículo
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         protected Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -37,7 +43,7 @@ namespace Entidades
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Datos del vehículo en formato String</returns>
         public virtual string Mostrar()
         {
             return ((string)this);
@@ -58,9 +64,9 @@ namespace Entidades
         /// <summary>
         /// Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <param name="v1">Primer vehículo a comparar</param>
+        /// <param name="v2">Segundo vehículo a comparar</param>
+        /// <returns>Devuelven 'true' si los chasis son iguales.</returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
             return (v1.chasis == v2.chasis);
@@ -68,9 +74,9 @@ namespace Entidades
         /// <summary>
         /// Dos vehiculos son distintos si su chasis es distinto
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <param name="v1">Primer vehículo a comparar</param>
+        /// <param name="v2">Segundo vehículo a comparar</param>
+        /// <returns>Devuelve 'true' si los chasis son distintos</returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1.chasis == v2.chasis);
