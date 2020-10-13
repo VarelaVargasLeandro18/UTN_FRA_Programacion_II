@@ -11,14 +11,20 @@ namespace Entidades
     /// </summary>
     public class Taller
     {
+
+        #region Atributos
         List<Vehiculo> vehiculos;
         int espacioDisponible;
+        #endregion
+
+        #region Enum
         public enum ETipo
         {
             Ciclomotor, SUV, Sedan, Todos
         }
+        #endregion
 
-        #region "Constructores"
+        #region Constructores
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
@@ -30,7 +36,7 @@ namespace Entidades
         }
         #endregion
 
-        #region "Sobrecargas"
+        #region Métodos-Override
         /// <summary>
         /// Muestro el estacionamiento y TODOS los vehículos
         /// </summary>
@@ -41,8 +47,7 @@ namespace Entidades
         }
         #endregion
 
-        #region "Métodos"
-
+        #region Métodos
         /// <summary>
         /// Expone los datos del elemento y su lista (incluidas sus herencias)
         /// SOLO del tipo requerido
@@ -82,7 +87,7 @@ namespace Entidades
         }
         #endregion
 
-        #region "Operadores"
+        #region Operadores
         /// <summary>
         /// Agregará un elemento a la lista
         /// </summary>
@@ -127,5 +132,6 @@ namespace Entidades
             return taller;
         }
         #endregion
+
     }
 }

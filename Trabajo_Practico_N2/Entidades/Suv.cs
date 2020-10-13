@@ -8,10 +8,15 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+
+        #region Constructor
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
         }
+        #endregion
+
+        #region Propiedades-Override
         /// <summary>
         /// SUV son 'Grande'
         /// </summary>
@@ -22,7 +27,9 @@ namespace Entidades
                 return ETamanio.Grande;
             }
         }
+        #endregion
 
+        #region Métodos-Override
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -35,5 +42,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+        #endregion
+    
     }
 }

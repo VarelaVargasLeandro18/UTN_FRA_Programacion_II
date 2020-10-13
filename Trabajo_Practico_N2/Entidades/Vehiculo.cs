@@ -8,6 +8,9 @@ namespace Entidades
     /// </summary>
     public abstract class Vehiculo
     {
+
+        #region Enum's
+
         public enum EMarca
         {
             Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson
@@ -17,10 +20,18 @@ namespace Entidades
         {
             Chico, Mediano, Grande
         }
-        
+
+        #endregion
+
+        #region Atributos
+
         EMarca marca;
         string chasis;
         ConsoleColor color;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Constructor que utilizarán las clases que hereden de Vehículo
@@ -35,10 +46,18 @@ namespace Entidades
             this.color = color;
         }
 
+        #endregion
+
+        #region Propiedades
+
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
         public abstract ETamanio Tamanio { get; }
+
+        #endregion
+
+        #region Funciones
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -48,6 +67,10 @@ namespace Entidades
         {
             return ((string)this);
         }
+
+        #endregion
+
+        #region Operadores
 
         public static explicit operator string(Vehiculo p)
         {
@@ -81,5 +104,8 @@ namespace Entidades
         {
             return !(v1.chasis == v2.chasis);
         }
+
+        #endregion
+
     }
 }

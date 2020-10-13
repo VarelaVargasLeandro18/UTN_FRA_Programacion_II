@@ -9,11 +9,16 @@ using System.Runtime.CompilerServices;
 
 namespace Entidades
 {
+
     public class Sedan : Vehiculo
     {
+
+        #region Atributos
         public enum ETipo { CuatroPuertas, CincoPuertas }
         private ETipo tipo;
+        #endregion
 
+        #region Constructores
         /// <summary>
         /// Por defecto, TIPO será CuatroPuertas
         /// </summary>
@@ -31,7 +36,9 @@ namespace Entidades
         {
             this.tipo = tipo;
         }
+        #endregion
 
+        #region Propiedades-Override
         /// <summary>
         /// Sedan son 'Mediano'
         /// </summary>
@@ -42,7 +49,9 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
+        #endregion
 
+        #region Métodos-Override
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -56,5 +65,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+        #endregion
+   
     }
 }
