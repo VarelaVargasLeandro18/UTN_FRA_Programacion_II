@@ -3,3 +3,7 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Cl
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\bin\Debug\Clases Abstractas.pdb
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\bin\Debug\Excepciones.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\bin\Debug\Excepciones.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csprojAssemblyReference.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CopyComplete

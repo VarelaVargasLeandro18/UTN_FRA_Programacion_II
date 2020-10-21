@@ -20,11 +20,11 @@ namespace TP3
                 Alumno.EEstadoCuenta.Deudor);
                 uni += a2;
             }
-
             catch (NacionalidadInvalidaException e)
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
                 Alumno a3 = new Alumno(3, "José", "Gutierrez", "12234456",
@@ -36,6 +36,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+
             Alumno a4 = new Alumno(4, "Miguel", "Hernandez", "92264456",
             EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Universidad.EClases.Legislacion,
             Alumno.EEstadoCuenta.AlDia);
@@ -62,6 +63,7 @@ namespace TP3
             Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456",
             EntidadesAbstractas.Persona.ENacionalidad.Argentino);
             uni += i2;
+
             try
             {
                 uni += Universidad.EClases.Programacion;
@@ -70,6 +72,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
                 uni += Universidad.EClases.Laboratorio;
@@ -78,6 +81,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
                 uni += Universidad.EClases.Legislacion;
@@ -86,6 +90,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
 
@@ -95,9 +100,11 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+            
             Console.WriteLine(uni.ToString());
             Console.ReadKey();
             Console.Clear();
+            
             try
             {
                 Universidad.Guardar(uni);
@@ -107,6 +114,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
+            
             try
             {
                 int jornada = 0;
@@ -119,6 +127,25 @@ namespace TP3
                 Console.WriteLine(e.Message);
             }
             */
+
+            try
+            {
+                Persona pUno = new Persona("5", "5", Persona.ENacionalidad.Argentino);
+                Persona pDos = new Persona("V", "V", 5, Persona.ENacionalidad.Extranjero);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                Persona pTres = new Persona("V", "V", 0, Persona.ENacionalidad.Argentino);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.ReadKey();
             
