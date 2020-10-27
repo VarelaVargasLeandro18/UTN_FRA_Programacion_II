@@ -41,7 +41,6 @@ namespace EntidadesAbstractas
         public override bool Equals(object obj)
         {
             bool sameType = obj.GetType() == this.GetType();
-            Console.WriteLine(this.GetType());
             return sameType && ((Universitario)obj).legajo == this.legajo;
         }
         #endregion
