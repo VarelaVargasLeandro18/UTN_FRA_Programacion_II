@@ -1,11 +1,12 @@
 ﻿using Excepciones;
 using System;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Clases_Abstractas
 {
-    public /*abstract*/ class Persona
+    public abstract class Persona
     {
 
         public enum ENacionalidad
@@ -53,7 +54,7 @@ namespace Clases_Abstractas
             {
                 try
                 {
-                    this.dni = this.ValidarDni(this.Nacionalidad, value);
+                    this.dni = this.ValidarDni(this.Nacionalidad, value.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -101,8 +102,7 @@ namespace Clases_Abstractas
             {
                 try
                 {
-                    if (this.ValidarDni(this.Nacionalidad, value) != null)
-                        this.dni = this.ValidarDni(this.Nacionalidad, int.Parse(value));
+                    this.dni = this.ValidarDni(this.Nacionalidad, value);
                 }
                 catch (Exception ex)
                 {
@@ -164,9 +164,9 @@ namespace Clases_Abstractas
             return ret;
         }
 
-        private string ValidarDni (ENacionalidad nacionalidad, string dato)
+        private int ValidarDni (ENacionalidad nacionalidad, string dato)
         {
-            Regex regexFormato = new Regex("[\\d]{8}");
+            Regex regexFormato = new Regex("^([\\d]{8})$");
             Match matcherFormato = regexFormato.Match(dato);
             string ret;
 
@@ -174,8 +174,8 @@ namespace Clases_Abstractas
                 ret = dato;
             else
                 throw new DniInvalidoException();
-
-            return dato;
+            
+            return this.ValidarDni(nacionalidad, int.Parse(ret));
         }
 
         private string ValidarNombreApellido (string dato)

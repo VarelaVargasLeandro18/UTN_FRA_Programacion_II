@@ -10,7 +10,7 @@ namespace Excepciones
     {
 
         public DniInvalidoException()
-            : base("Formato de DNI Inválido. Procure utilizar únicamente 8 números del 0 al 9.")
+            : base("Formato de DNI Inválido. Procure utilizar únicamente 8 cifras.")
         { }
 
         public DniInvalidoException(Exception e)

@@ -128,28 +128,8 @@ namespace TP3
             }
             */
 
-            try
-            {
-                Persona pUno = new Persona("5", "5", Persona.ENacionalidad.Argentino);
-                Persona pDos = new Persona("V", "V", 5, Persona.ENacionalidad.Extranjero);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            try
-            {
-                Persona pTres = new Persona("V", "V", 0, Persona.ENacionalidad.Argentino);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
             Console.ReadKey();
-            
-
+         
         }
     }
 }
