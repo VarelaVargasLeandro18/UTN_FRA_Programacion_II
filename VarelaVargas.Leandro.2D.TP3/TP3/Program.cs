@@ -1,4 +1,5 @@
 ﻿using Clases_Abstractas;
+using Clases_Instanciables;
 using System;
 
 namespace TP3
@@ -127,6 +128,11 @@ namespace TP3
                 Console.WriteLine(e.Message);
             }
             */
+
+            Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
+            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+            Alumno.EEstadoCuenta.Becado);
+
 
             Console.ReadKey();
          
