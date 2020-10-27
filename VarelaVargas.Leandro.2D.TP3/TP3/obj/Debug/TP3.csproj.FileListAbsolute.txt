@@ -10,3 +10,5 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP3\bin\Debug\Clases Abstractas.pdb
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP3\bin\Debug\Excepciones.dll
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP3\bin\Debug\Excepciones.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP3\bin\Debug\Clases Instanciables.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\TP3\bin\Debug\Clases Instanciables.pdb

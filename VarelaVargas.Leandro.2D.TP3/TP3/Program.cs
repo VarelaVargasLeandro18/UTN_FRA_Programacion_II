@@ -1,5 +1,5 @@
-﻿using Clases_Abstractas;
-using Clases_Instanciables;
+﻿using Clases_Instanciables;
+using EntidadesAbstractas;
 using System;
 
 namespace TP3
@@ -129,13 +129,25 @@ namespace TP3
             }
             */
 
-            Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
-            Alumno.EEstadoCuenta.Becado);
-
-
             Console.ReadKey();
          
         }
     }
 }
+
+/* Pruebas Personales (Alumno):
+Alumno a1 = new Alumno (1, "Juan", "Lopez", "12234456",
+EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+Alumno.EEstadoCuenta.Becado);
+
+Alumno a2 = new Alumno(1, "Juan", "Lopez", "12234456",
+EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+Alumno.EEstadoCuenta.Becado);
+
+Console.WriteLine(a1);
+Console.WriteLine("a1 == a2 (true): " + (a1 == a2));
+Console.WriteLine("a1 != a2 (false): " + (a1 != a2) );
+
+Console.WriteLine("a1 == Programacion (true): " + (a1 == Universidad.EClases.Programacion));
+Console.WriteLine("a1 != Programacion (false): " + (a1 != Universidad.EClases.Programacion));
+*/

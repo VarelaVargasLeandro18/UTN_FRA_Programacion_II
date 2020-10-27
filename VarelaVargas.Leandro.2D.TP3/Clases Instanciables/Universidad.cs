@@ -19,8 +19,8 @@ namespace Clases_Instanciables
 
         #region Campos
         private List<Alumno> alumnos;
-        private List<Jornada> jornadas;
-        private List<Profesor> profesores;
+        /*private List<Jornada> jornadas;
+        private List<Profesor> profesores;*/
         #endregion
 
 

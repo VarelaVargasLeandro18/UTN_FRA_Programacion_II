@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace EntidadesAbstractas
 
         #region Constructores
         public Universitario()
+            :base()
         {}
 
         public Universitario (int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
@@ -24,9 +26,8 @@ namespace EntidadesAbstractas
         #region Metodos
         protected virtual string MostrarDatos()
         {
-            StringBuilder retStrBld = new StringBuilder(this.ToString());
-            
-            retStrBld.Append("LEGAJO: ")
+            StringBuilder retStrBld = new StringBuilder(base.ToString())
+                .Append("\nLEGAJO NÚMERO: ")
                 .Append(this.legajo)
                 .AppendLine();
 
@@ -39,7 +40,9 @@ namespace EntidadesAbstractas
         #region Metodos - Override
         public override bool Equals(object obj)
         {
-            return obj is Universitario && ((Universitario)obj).legajo == this.legajo;
+            bool sameType = obj.GetType() == this.GetType();
+            Console.WriteLine(this.GetType());
+            return sameType && ((Universitario)obj).legajo == this.legajo;
         }
         #endregion
 

@@ -54,6 +54,10 @@
       <Project>{a68789a8-adf4-498e-bb3c-6d143ed1487b}</Project>
       <Name>Clases Abstractas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Clases Instanciables\Clases Instanciables.csproj">
+      <Project>{3B2FD7D4-D392-4AAC-8CD1-03E1831D5076}</Project>
+      <Name>Clases Instanciables</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
