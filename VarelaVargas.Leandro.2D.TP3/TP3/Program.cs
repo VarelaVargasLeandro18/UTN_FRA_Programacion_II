@@ -129,22 +129,6 @@ namespace TP3
             }
             */
 
-            Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
-            Alumno.EEstadoCuenta.Becado);
-            Profesor i1 = new Profesor(1, "Juan", "Lopez", "12224458",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino);
-            //uni += i1;
-            Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456",
-            EntidadesAbstractas.Persona.ENacionalidad.Argentino);
-            //uni += i2;
-
-            Console.WriteLine(i1);
-
-            Console.WriteLine("i1 == i2 (false): " + (i1 == i2) );
-            Console.WriteLine("i1 != i2 (true): " + (i1 != i2) );
-            Console.WriteLine("i1 == a1 (false): " + (i1 == a1));
-
             Console.ReadKey();
          
         }
@@ -166,4 +150,22 @@ Console.WriteLine("a1 != a2 (false): " + (a1 != a2) );
 
 Console.WriteLine("a1 == Programacion (true): " + (a1 == Universidad.EClases.Programacion));
 Console.WriteLine("a1 != Programacion (false): " + (a1 != Universidad.EClases.Programacion));
+*/
+
+/* Pruebas Personales (Profesor)
+Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
+EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+Alumno.EEstadoCuenta.Becado);
+Profesor i1 = new Profesor(1, "Juan", "Lopez", "12224458",
+EntidadesAbstractas.Persona.ENacionalidad.Argentino);
+//uni += i1;
+Profesor i2 = new Profesor(2, "Roberto", "Juarez", "32234456",
+EntidadesAbstractas.Persona.ENacionalidad.Argentino);
+//uni += i2;
+
+Console.WriteLine(i1);
+
+Console.WriteLine("i1 == i2 (false): " + (i1 == i2) );
+Console.WriteLine("i1 != i2 (true): " + (i1 != i2) );
+Console.WriteLine("i1 == a1 (false): " + (i1 == a1));
 */
