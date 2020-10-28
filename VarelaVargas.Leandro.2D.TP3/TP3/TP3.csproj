@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Archivos\Archivos.csproj">
+      <Project>{1ABF3C46-CD81-48B7-8B5A-65DA123E84E4}</Project>
+      <Name>Archivos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Clases Abstractas\Clases Abstractas.csproj">
       <Project>{a68789a8-adf4-498e-bb3c-6d143ed1487b}</Project>
       <Name>Clases Abstractas</Name>

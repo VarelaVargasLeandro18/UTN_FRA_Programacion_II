@@ -1,4 +1,5 @@
-﻿using Clases_Instanciables;
+﻿using Archivos;
+using Clases_Instanciables;
 using EntidadesAbstractas;
 using System;
 
@@ -168,4 +169,31 @@ Console.WriteLine(i1);
 Console.WriteLine("i1 == i2 (false): " + (i1 == i2) );
 Console.WriteLine("i1 != i2 (true): " + (i1 != i2) );
 Console.WriteLine("i1 == a1 (false): " + (i1 == a1));
+*/
+
+/* Pruebas Personales (Archivos)
+
+Text guardarAlumno = new Text();
+string textoLeido;
+
+string pathText = @"C:\Users\lean\Desktop\archivo.txt";
+
+guardarAlumno.Guardar(pathText, new Alumno(0, "A", "B", "12345678", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio, Alumno.EEstadoCuenta.AlDia).ToString());
+
+Console.WriteLine(guardarAlumno.Leer(pathText, out textoLeido));
+
+Console.WriteLine(textoLeido);
+
+*************************************************
+Xml<Alumno> guardarAlumno = new Xml<Alumno>();
+Alumno alumnoLeido;
+
+string pathXML = @"C:\Users\lean\Desktop\archivo.xml";
+
+guardarAlumno.Guardar(pathXML, new Alumno(0, "A", "B", "12345678", Persona.ENacionalidad.Argentino, Universidad.EClases.Laboratorio, Alumno.EEstadoCuenta.AlDia));
+
+Console.WriteLine(guardarAlumno.Leer(pathXML, out alumnoLeido));
+
+Console.WriteLine(alumnoLeido);
+
 */

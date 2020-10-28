@@ -32,7 +32,7 @@ namespace Archivos
             return ret;
         }
 
-        public bool Leer(string archivo, T datos)
+        public bool Leer(string archivo, out T datos)
         {
             bool ret = false;
 
