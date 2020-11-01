@@ -19,7 +19,7 @@ namespace EntidadesAbstractas
         }
         #endregion
 
-        #region Metodos
+        #region Métodos
         protected virtual string MostrarDatos()
         {
             StringBuilder retStrBld = new StringBuilder(base.ToString())
@@ -33,18 +33,19 @@ namespace EntidadesAbstractas
         protected abstract string ParticiparEnClase();
         #endregion
 
-        #region Metodos - Override
+        #region Métodos - Override
         public override bool Equals(object obj)
         {
-            bool sameType = obj.GetType() == this.GetType();
-            return sameType && ((Universitario)obj).legajo == this.legajo;
+            return !(obj is null) 
+                && obj.GetType() == this.GetType()
+                && ((Universitario)obj).legajo == this.legajo;
         }
         #endregion
 
         #region Operadores
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
-            return pg1.Equals(pg2);
+            return !(pg1 is null) && !(pg2 is null) && pg1.Equals(pg2);
         }
 
         public static bool operator !=(Universitario pg1, Universitario pg2)

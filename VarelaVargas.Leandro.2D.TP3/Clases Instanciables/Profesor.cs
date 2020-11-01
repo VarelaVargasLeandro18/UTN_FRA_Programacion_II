@@ -22,22 +22,19 @@ namespace Clases_Instanciables
             Profesor.random = new Random();
         }
 
-        private Profesor()
+        public Profesor()
         {
-            this.clasesDelDia = new Queue<EClases>();
-            this._randomClases();
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
             : base (id, nombre, apellido, dni, nacionalidad)
         {
-            Profesor aux = new Profesor();
-            this.clasesDelDia = aux.clasesDelDia;
-            aux = null;
+            this.clasesDelDia = new Queue<EClases>();
+            this._randomClases();
         }
         #endregion
 
-        #region Metodos
+        #region Métodos
         private void _randomClases()
         {
             int claseUno = Profesor.random.Next(0, 3);
@@ -48,7 +45,7 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        #region Metodos - Override
+        #region Métodos - Override
         protected override string MostrarDatos()
         {
             StringBuilder retStrBuilder = new StringBuilder(base.MostrarDatos())

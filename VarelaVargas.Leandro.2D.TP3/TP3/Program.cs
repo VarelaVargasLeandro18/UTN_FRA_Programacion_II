@@ -130,6 +130,8 @@ namespace TP3
             }
             */
 
+            
+
             Console.ReadKey();
          
         }
@@ -197,3 +199,23 @@ Console.WriteLine(guardarAlumno.Leer(pathXML, out alumnoLeido));
 Console.WriteLine(alumnoLeido);
 
 */
+
+/* Pruebas Personales (Jornada)
+    Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
+    EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+    Alumno.EEstadoCuenta.Becado);
+
+    Alumno a2 = new Alumno(2, "Juan", "Lopez", "15234456",
+    EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
+    Alumno.EEstadoCuenta.Becado);
+
+    Profesor p1 = new Profesor(3, "AAA", "AAA", "24435460", Persona.ENacionalidad.Argentino);
+
+    Jornada j = new Jornada(Universidad.EClases.Laboratorio, p1);
+
+    if ( j+a1 && j+a2 )
+    {
+        Jornada.Guardar(j);
+        Console.WriteLine(Jornada.Leer());
+    }
+ */

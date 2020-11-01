@@ -9,3 +9,5 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Cl
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CopyComplete
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.dll
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Instanciables\obj\Debug\Clases Instanciables.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Instanciables\bin\Debug\Archivos.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2D.TP3\Clases Instanciables\bin\Debug\Archivos.pdb

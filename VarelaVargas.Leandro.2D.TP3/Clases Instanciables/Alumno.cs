@@ -43,7 +43,7 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        #region Metodos - Override
+        #region Métodos - Override
         protected override string MostrarDatos()
         {
             StringBuilder retStrBld = new StringBuilder(base.MostrarDatos())
@@ -68,7 +68,7 @@ namespace Clases_Instanciables
         #region Operadores
         public static bool operator ==(Alumno a, EClases clase)
         {
-            return a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor;
+            return !(a is null) && a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor;
         }
 
         public static bool operator !=(Alumno a, EClases clase)
