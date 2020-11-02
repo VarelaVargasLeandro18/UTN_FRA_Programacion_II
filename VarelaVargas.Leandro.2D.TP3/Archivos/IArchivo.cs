@@ -8,6 +8,7 @@ namespace Archivos
 {
     public interface IArchivo <T>
     {
+
         /// <summary>
         /// Permitirá guardar un archivo en el path deseado.
         /// </summary>
