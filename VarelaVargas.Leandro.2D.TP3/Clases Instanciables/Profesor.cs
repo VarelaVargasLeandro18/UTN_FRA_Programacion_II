@@ -29,6 +29,8 @@ namespace Clases_Instanciables
 
         public Profesor()
         {
+            this.clasesDelDia = new Queue<EClases>();
+            this._randomClases();
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad)
