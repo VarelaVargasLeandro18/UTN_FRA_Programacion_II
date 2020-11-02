@@ -62,6 +62,10 @@
       <Project>{3B2FD7D4-D392-4AAC-8CD1-03E1831D5076}</Project>
       <Name>Clases Instanciables</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{C9A4D88E-D204-47CF-AF42-48565A0F02CF}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

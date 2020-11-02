@@ -1,6 +1,7 @@
 ﻿using Archivos;
 using Clases_Instanciables;
 using EntidadesAbstractas;
+using Excepciones;
 using System;
 using static Clases_Instanciables.Universidad;
 using static EntidadesAbstractas.Persona;
@@ -11,7 +12,7 @@ namespace TP3
     {
         static void Main(string[] args)
         {
-            /*
+            
             Universidad uni = new Universidad();
             Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456",
             EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion,
@@ -130,8 +131,7 @@ namespace TP3
             {
                 Console.WriteLine(e.Message);
             }
-            */
-
+            
             Console.ReadKey();
          
         }

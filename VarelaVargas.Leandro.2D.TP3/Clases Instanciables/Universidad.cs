@@ -167,13 +167,11 @@ namespace Clases_Instanciables
         /// <returns>String con los datos de la Universidad.</returns>
         private static string MostrarDatos ( Universidad uni )
         {
-            StringBuilder retStrBld = new StringBuilder()
-                .AppendLine("<-------------------------------------------------->");
+            StringBuilder retStrBld = new StringBuilder();
 
             foreach (Jornada jornada in uni.jornadas)
-                retStrBld.AppendLine($"{jornada}");
-
-            retStrBld.AppendLine("<-------------------------------------------------->");
+                retStrBld.AppendLine($"{jornada}")
+                    .AppendLine("<-------------------------------------------------->");
 
             return retStrBld.ToString();
         }
