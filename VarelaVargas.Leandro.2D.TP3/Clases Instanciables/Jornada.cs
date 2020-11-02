@@ -123,7 +123,7 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        #region Propiedades
+        #region Operadores
         public static bool operator ==( Jornada j, Alumno a )
         {
             return !(j is null) && !(a is null) && j.Alumnos.Contains(a);

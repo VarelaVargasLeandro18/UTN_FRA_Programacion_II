@@ -56,6 +56,10 @@
       <Project>{A68789A8-ADF4-498E-BB3C-6D143ED1487B}</Project>
       <Name>Clases Abstractas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{C9A4D88E-D204-47CF-AF42-48565A0F02CF}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,6 +2,8 @@
 using Clases_Instanciables;
 using EntidadesAbstractas;
 using System;
+using static Clases_Instanciables.Universidad;
+using static EntidadesAbstractas.Persona;
 
 namespace TP3
 {
@@ -130,8 +132,6 @@ namespace TP3
             }
             */
 
-            
-
             Console.ReadKey();
          
         }
@@ -218,4 +218,60 @@ Console.WriteLine(alumnoLeido);
         Jornada.Guardar(j);
         Console.WriteLine(Jornada.Leer());
     }
+ */
+
+/* Pruebas Personales (Universidad)
+    Alumno aUno = new Alumno(0, "AA", "AA", "29384732", Persona.ENacionalidad.Argentino, Universidad.EClases.SPD);
+    Alumno aDos = new Alumno(1, "BB", "BB", "25460392", ENacionalidad.Argentino, EClases.Programacion);
+    Alumno aTres = new Alumno(2, "CC", "CC", "56437869", ENacionalidad.Argentino, EClases.Legislacion);
+    Alumno aCuatro = new Alumno(3, "DD", "DD", "93452934", ENacionalidad.Extranjero, EClases.Laboratorio);
+
+    Profesor pUno = new Profesor(1, "AA", "NN", "54435434", Persona.ENacionalidad.Argentino);
+            
+    Universidad uni = new Universidad();
+
+    uni += aUno;
+    uni += aDos;
+    uni += aTres;
+    uni += aCuatro;
+    uni += pUno;
+    uni += pUno;
+
+    try
+    {
+        uni += EClases.Laboratorio;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    try
+    {
+        uni += EClases.SPD;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    try
+    {
+        uni += EClases.Programacion;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    try
+    {
+        uni += EClases.Legislacion;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    Console.WriteLine(uni);
  */
