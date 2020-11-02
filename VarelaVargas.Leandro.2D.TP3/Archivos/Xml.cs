@@ -11,6 +11,13 @@ namespace Archivos
 {
     public class Xml<T> : IArchivo<T>
     {
+
+        /// <summary>
+        /// Guarda un archivo en formato XML.
+        /// </summary>
+        /// <param name="archivo">Path del archivo.</param>
+        /// <param name="datos">Objeto a guardar.</param>
+        /// <returns></returns>
         public bool Guardar(string archivo, T datos)
         {
             bool ret = false;
@@ -32,6 +39,12 @@ namespace Archivos
             return ret;
         }
 
+        /// <summary>
+        /// Deserializa un archivo XML y crea un objeto.
+        /// </summary>
+        /// <param name="archivo">Path del archivo.</param>
+        /// <param name="datos">Objeto a crear.</param>
+        /// <returns></returns>
         public bool Leer(string archivo, out T datos)
         {
             bool ret = false;
