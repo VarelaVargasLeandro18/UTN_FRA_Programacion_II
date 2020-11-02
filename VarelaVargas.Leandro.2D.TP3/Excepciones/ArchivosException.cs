@@ -18,6 +18,10 @@ namespace Excepciones
             : base ( msg )
         {}
 
+        public ArchivosException(Exception innerException)
+            :base (Msg, innerException)
+        { }
+
         public ArchivosException( string msg, Exception innerException)
             : base(msg, innerException)
         {}
