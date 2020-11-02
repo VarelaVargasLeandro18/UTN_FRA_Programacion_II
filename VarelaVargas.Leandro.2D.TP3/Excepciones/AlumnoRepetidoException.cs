@@ -14,6 +14,10 @@ namespace Excepciones
             : base ( Msg )
         { }
 
+        public AlumnoRepetidoException(string msg)
+            : base (msg)
+        { }
+
         public AlumnoRepetidoException(Exception innerException)
             : base ( Msg, innerException )
         { }

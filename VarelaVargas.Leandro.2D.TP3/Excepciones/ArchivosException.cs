@@ -8,17 +8,18 @@ namespace Excepciones
 {
     public class ArchivosException : Exception
     {
+        private static string Msg = "No se ha podido crear el archivo.";
 
         public ArchivosException()
-            : base ("No se ha podido crear el archivo.")
+            : base (Msg)
         {}
 
-        public ArchivosException ( string message )
-            : base ( message )
+        public ArchivosException ( string msg )
+            : base ( msg )
         {}
 
-        public ArchivosException(Exception innerException)
-            : base("No se ha podido crear el archivo.", innerException)
+        public ArchivosException( string msg, Exception innerException)
+            : base(msg, innerException)
         {}
 
     }

@@ -8,13 +8,14 @@ namespace Excepciones
 {
     public class DniInvalidoException : Exception
     {
+        private static string Msg = "Formato de DNI Inválido. Procure utilizar únicamente 8 cifras.";
 
         public DniInvalidoException()
-            : base("Formato de DNI Inválido. Procure utilizar únicamente 8 cifras.")
+            : base(Msg)
         { }
 
         public DniInvalidoException(Exception e)
-            : base("DNI Inválido", e)
+            : base(Msg, e)
         { }
 
         public DniInvalidoException(string message)
