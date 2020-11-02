@@ -6,9 +6,15 @@ using System.Text.RegularExpressions;
 
 namespace EntidadesAbstractas
 {
+
+    /// <summary>
+    /// Persona abstracta.
+    /// </summary>
     public abstract class Persona
     {
-
+        /// <summary>
+        /// Nacionalidades que puede tomar una persona
+        /// </summary>
         public enum ENacionalidad
         {
             Argentino,
@@ -23,6 +29,9 @@ namespace EntidadesAbstractas
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Propiedad Apellido. Obtiene y Settea el Apellido.
+        /// </summary>
         public string Apellido
         {
             get
@@ -43,6 +52,10 @@ namespace EntidadesAbstractas
             }
         }
 
+        /// <summary>
+        /// Propiedad DNI. Obtiene y Settea el DNI como un Int. Realiza Validaciones pertinentes.
+        /// Devuelve NacionalidadInvalidaException y DniInvalidoException.
+        /// </summary>
         public int DNI
         {
             get
@@ -63,6 +76,9 @@ namespace EntidadesAbstractas
             }
         }
 
+        /// <summary>
+        /// Propiedad Nombre. Obtiene y Settea el Nombre.
+        /// </summary>
         public string Nombre
         {
             get
@@ -83,6 +99,9 @@ namespace EntidadesAbstractas
             }
         }
 
+        /// <summary>
+        /// Propiedad Nacionalidad. Obtiene y Settea la Nacionalidad de la Persona.
+        /// </summary>
         public ENacionalidad Nacionalidad
         {
             get
@@ -96,6 +115,10 @@ namespace EntidadesAbstractas
             }
         }
 
+        /// <summary>
+        /// Propiedad StringToDNI. Obtiene y Settea el DNI como un String. Realiza Validaciones pertinentes.
+        /// Devuelve NacionalidadInvalidaException y DniInvalidoException.
+        /// </summary>
         public string StringToDNI
         {
             set
@@ -150,6 +173,13 @@ namespace EntidadesAbstractas
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Valida que el DNI dado de la persona se corresponda con su nacionalidad.
+        /// Devuelve NacionalidadInvalidaException en caso de que el DNI no se corresponda con la nacionalidad.
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad de la persona.</param>
+        /// <param name="dato">DNI a evaluar.</param>
+        /// <returns>Retorna el mismo DNI.</returns>
         private int ValidarDni (ENacionalidad nacionalidad, int dato)
         {
             int ret;
@@ -164,6 +194,13 @@ namespace EntidadesAbstractas
             return ret;
         }
 
+        /// <summary>
+        /// Valida que el formato del DNI dado sea correcto y posteriormente que su nacionalidad se corresponda con el tipo de DNI.
+        /// Devuelve DniInvalidoException en caso de que el formato no sea correcto (no tenga 8 números). 
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad de la Persona.</param>
+        /// <param name="dato">DNI a evaluar.</param>
+        /// <returns>Retorna el mismo DNI en formato Int.</returns>
         private int ValidarDni (ENacionalidad nacionalidad, string dato)
         {
             Regex regexFormato = new Regex("^([\\d]{8})$");
@@ -178,6 +215,11 @@ namespace EntidadesAbstractas
             return this.ValidarDni(nacionalidad, int.Parse(ret));
         }
 
+        /// <summary>
+        /// Valida que el Nombre y Apellido de una persona
+        /// </summary>
+        /// <param name="dato"></param>
+        /// <returns></returns>
         private string ValidarNombreApellido (string dato)
         {
             Regex regexNomApe = new Regex("[\\w\\ ]+");
@@ -192,6 +234,10 @@ namespace EntidadesAbstractas
         #endregion
 
         #region Metodos - Override
+        /// <summary>
+        /// Devuelve los datos de la Persona como un String.
+        /// </summary>
+        /// <returns>Datos de la Persona.</returns>
         public override string ToString()
         {
             StringBuilder toStr = new StringBuilder();

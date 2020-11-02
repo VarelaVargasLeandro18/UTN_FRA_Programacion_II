@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Archivos
 {
+
+    /// <summary>
+    /// Clase para creación de archivos de Texto.
+    /// </summary>
     public class Texto : IArchivo<string>
     {
 

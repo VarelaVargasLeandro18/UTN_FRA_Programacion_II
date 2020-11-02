@@ -9,6 +9,11 @@ using System.Xml.Serialization;
 
 namespace Archivos
 {
+
+    /// <summary>
+    /// Clase para creación de archivos XML.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Xml<T> : IArchivo<T>
     {
 

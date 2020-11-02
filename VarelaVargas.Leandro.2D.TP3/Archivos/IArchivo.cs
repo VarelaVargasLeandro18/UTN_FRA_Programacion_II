@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Archivos
 {
+
+    /// <summary>
+    /// Interfaz de creación de Archivos.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IArchivo <T>
     {
 
