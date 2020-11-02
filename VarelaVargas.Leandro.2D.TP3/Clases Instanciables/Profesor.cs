@@ -8,6 +8,11 @@ using static Clases_Instanciables.Universidad;
 
 namespace Clases_Instanciables
 {
+
+    /// <summary>
+    /// Implementación de la Clase abstracta Universitario.
+    /// No heredable.
+    /// </summary>
     public sealed class Profesor : Universitario
     {
 
@@ -35,10 +40,14 @@ namespace Clases_Instanciables
         #endregion
 
         #region Métodos
+
+        /// <summary>
+        /// Le asigna dos clases aleatorias al profesor.
+        /// </summary>
         private void _randomClases()
         {
-            int claseUno = Profesor.random.Next(0, 3);
-            int claseDos = Profesor.random.Next(0, 3);
+            int claseUno = Profesor.random.Next(0, 4);
+            int claseDos = Profesor.random.Next(0, 4);
 
             this.clasesDelDia.Enqueue( ((EClases)claseUno) );
             this.clasesDelDia.Enqueue( ((EClases)claseDos) );
@@ -46,6 +55,11 @@ namespace Clases_Instanciables
         #endregion
 
         #region Métodos - Override
+
+        /// <summary>
+        /// Devuelve los Datos del profesor en formato string.
+        /// </summary>
+        /// <returns>Datos del Profesor.</returns>
         protected override string MostrarDatos()
         {
             StringBuilder retStrBuilder = new StringBuilder(base.MostrarDatos())
@@ -54,6 +68,10 @@ namespace Clases_Instanciables
             return retStrBuilder.ToString();
         }
 
+        /// <summary>
+        /// Devuelve las 2 clases en las que enseña el profesor.
+        /// </summary>
+        /// <returns>"CLASES DEL DÍA\n" y las dos clases que toma.</returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder retStrBld = new StringBuilder("CLASES DEL DÍA\n");
@@ -64,6 +82,10 @@ namespace Clases_Instanciables
             return retStrBld.ToString();
         }
 
+        /// <summary>
+        /// Hace públicos los datos del Profesor.
+        /// </summary>
+        /// <returns>Datos del Profesor en formato string.</returns>
         public override string ToString()
         {
             return this.MostrarDatos();
@@ -71,11 +93,24 @@ namespace Clases_Instanciables
         #endregion
 
         #region Operadores
+
+        /// <summary>
+        /// Comprueba que un Profesor de una clase.
+        /// </summary>
+        /// <param name="i">Profesor que se comprobará que dá una clase.</param>
+        /// <param name="clase">Clase que se comprobará que el profesor dá.</param>
+        /// <returns>True si el profesor dá la clase. Calso contrario false.</returns>
         public static bool operator ==(Profesor i, EClases clase)
         {
             return i.clasesDelDia.Contains(clase);
         }
 
+        /// <summary>
+        /// Comprueba que un profesor NO dé una clase.
+        /// </summary>
+        /// <param name="i">Profesor que se comprobará que NO dé la clase.</param>
+        /// <param name="clase">Clase que se comprobará que NO dé el Profesor.</param>
+        /// <returns>Valor contrario de la operación "=="</returns>
         public static bool operator !=(Profesor i, EClases clase)
         {
             return !(i == clase);
