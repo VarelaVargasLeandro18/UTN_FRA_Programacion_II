@@ -44,13 +44,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxDireccion = new System.Windows.Forms.TextBox();
-            this.textBoxCodProducto = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblCodProducto = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewTablaFactura = new System.Windows.Forms.DataGridView();
+            this.comboBoxCodProducto = new System.Windows.Forms.ComboBox();
+            this.btnConfirmarFactura = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.menuStripBarraDeHerramientasPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTablaFactura)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +67,7 @@
             this.toolStripMenuItemClientes});
             this.menuStripBarraDeHerramientasPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripBarraDeHerramientasPrincipal.Name = "menuStripBarraDeHerramientasPrincipal";
-            this.menuStripBarraDeHerramientasPrincipal.Size = new System.Drawing.Size(882, 30);
+            this.menuStripBarraDeHerramientasPrincipal.Size = new System.Drawing.Size(882, 28);
             this.menuStripBarraDeHerramientasPrincipal.TabIndex = 0;
             // 
             // toolStripMenuItemStock
@@ -201,14 +204,6 @@
             this.textBoxDireccion.Size = new System.Drawing.Size(114, 22);
             this.textBoxDireccion.TabIndex = 13;
             // 
-            // textBoxCodProducto
-            // 
-            this.textBoxCodProducto.Location = new System.Drawing.Point(156, 143);
-            this.textBoxCodProducto.Name = "textBoxCodProducto";
-            this.textBoxCodProducto.Size = new System.Drawing.Size(100, 22);
-            this.textBoxCodProducto.TabIndex = 14;
-            this.textBoxCodProducto.TextChanged += new System.EventHandler(this.textBoxCodProducto_TextChanged);
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -274,18 +269,56 @@
             this.dataGridViewTablaFactura.Size = new System.Drawing.Size(855, 300);
             this.dataGridViewTablaFactura.TabIndex = 20;
             // 
+            // comboBoxCodProducto
+            // 
+            this.comboBoxCodProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCodProducto.FormattingEnabled = true;
+            this.comboBoxCodProducto.Location = new System.Drawing.Point(157, 143);
+            this.comboBoxCodProducto.Name = "comboBoxCodProducto";
+            this.comboBoxCodProducto.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCodProducto.TabIndex = 21;
+            // 
+            // btnConfirmarFactura
+            // 
+            this.btnConfirmarFactura.Location = new System.Drawing.Point(12, 497);
+            this.btnConfirmarFactura.Name = "btnConfirmarFactura";
+            this.btnConfirmarFactura.Size = new System.Drawing.Size(87, 32);
+            this.btnConfirmarFactura.TabIndex = 22;
+            this.btnConfirmarFactura.Text = "Confirmar Factura";
+            this.btnConfirmarFactura.UseVisualStyleBackColor = true;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(722, 497);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(40, 17);
+            this.lblTotal.TabIndex = 23;
+            this.lblTotal.Text = "Total";
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.Location = new System.Drawing.Point(768, 497);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.ReadOnly = true;
+            this.textBoxTotal.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTotal.TabIndex = 24;
+            // 
             // FrmSistemaDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 503);
+            this.ClientSize = new System.Drawing.Size(882, 541);
+            this.Controls.Add(this.textBoxTotal);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnConfirmarFactura);
+            this.Controls.Add(this.comboBoxCodProducto);
             this.Controls.Add(this.dataGridViewTablaFactura);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.lblCodProducto);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.textBoxCodProducto);
             this.Controls.Add(this.textBoxDireccion);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBox2);
@@ -331,13 +364,16 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxDireccion;
-        private System.Windows.Forms.TextBox textBoxCodProducto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblCodProducto;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridViewTablaFactura;
+        private System.Windows.Forms.ComboBox comboBoxCodProducto;
+        private System.Windows.Forms.Button btnConfirmarFactura;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox textBoxTotal;
     }
 }
 

@@ -17,10 +17,16 @@ namespace TP4
         public FrmSistemaDeVenta()
         {
             InitializeComponent();
+
+            //Frm - Load
             this.Load += this.generarTablaFactura;
             this.Load += this.configurarDataGridView;
+
+            //
+
         }
 
+        #region Eventos Frm-Load
         /// <summary>
         /// Genera la Tabla Factura, donde se cargaran los productos de la venta.
         /// </summary>
@@ -63,10 +69,9 @@ namespace TP4
             foreach (DataGridViewColumn columna in this.dataGridViewTablaFactura.Columns)
                 columna.Width = tamanioColumnas;
         }
+        #endregion
 
-        private void textBoxCodProducto_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }
