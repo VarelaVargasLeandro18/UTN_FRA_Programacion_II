@@ -49,6 +49,22 @@ namespace Entidades
             return ret;
         }
 
+        public T obtenerProducto(int id)
+        {
+            T prod = null;
+
+            foreach (T producto in this.lproductos)
+            {
+                if (producto.ID == id)
+                {
+                    prod = producto;
+                    break;
+                }
+            }
+
+            return prod;
+        }
+
         public void actualizarMedianteBD(string NombreTabla)
         {
             SqlConnection conn = null;

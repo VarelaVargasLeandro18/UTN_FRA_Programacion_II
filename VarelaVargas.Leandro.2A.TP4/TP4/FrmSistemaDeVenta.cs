@@ -11,6 +11,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Clase 15: Exception. Listo
+ * Clase 16: Test Unitarios.
+ * Clase 17: Tipos Genéricos. Listo
+ * Clase 18: Interfaces. Listo
+ * Clase 19: Archivos y Serialización.
+ * Clase 21 y 22: SQL y BD. Listo
+ * Clase 23: Hilos.
+ * Clase 24: Eventos. Listo
+ * Clase 25: Métodos de Extensión. 
+ */
+
 namespace TP4
 {
     public partial class FrmSistemaDeVenta : Form
@@ -53,12 +65,23 @@ namespace TP4
             this.actualizaciones.Invoke();
 
             //Frm - Load
+            this.Load += this.inicializarTextBoxTotal;
             this.Load += this.generarTablaFactura;
             this.Load += this.configurarDataGridView;
 
         }
 
         #region Eventos Frm-Load
+        /// <summary>
+        /// Inicializa el texto TextBoxTotal como "0"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void inicializarTextBoxTotal(object sender, EventArgs args)
+        {
+            this.textBoxTotal.Text = "0";
+        }
+
         /// <summary>
         /// Genera la Tabla Factura, donde se cargaran los productos de la venta.
         /// </summary>
@@ -82,24 +105,33 @@ namespace TP4
             this.tablaFactura.Columns.Add("Precio Unitario");
             this.tablaFactura.Columns[3].ReadOnly = true;
 
-            this.tablaFactura.Columns.Add("Precio Total (Unitario * Cantidad)");
+            this.tablaFactura.Columns.Add("Tipo");
             this.tablaFactura.Columns[4].ReadOnly = true;
+
+            this.tablaFactura.Columns.Add("Precio Total (Unitario * Cantidad)");
+            this.tablaFactura.Columns[5].ReadOnly = false;
         }
 
         /// <summary>
-        /// Actualizará el precio Total de la factura en el Form.
+        /// Actualizará el precio Total y el Precio * Cantidad de la factura en el Form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TablaFactura_ColumnChanged(object sender, DataColumnChangeEventArgs e)
         {
-            float precioTotal = float.Parse(this.textBoxTotal.Text);
-            int Cantidad = int.Parse(e.Row[0].ToString());
-            float precio = float.Parse(e.Row[4].ToString());
+            if ( e.Column.ColumnName.Equals("Cantidad") )
+            {
+                float precioTotal = float.Parse(this.textBoxTotal.Text);
+                int Cantidad = int.Parse(e.Row[0].ToString());
+                float precio = float.Parse(e.Row[3].ToString());
 
-            precioTotal += (precio * Cantidad);
+                precioTotal += (precio * Cantidad);
 
-            this.textBoxTotal.Text = precioTotal.ToString();
+                e.Row[5] = precio * Cantidad;
+                this.textBoxTotal.Text = precioTotal.ToString();
+
+                this.tablaFactura.AcceptChanges();
+            }
         }
 
         /// <summary>
@@ -111,10 +143,12 @@ namespace TP4
         private void configurarDataGridView(object sender, EventArgs args)
         {
             this.dataGridViewTablaFactura.DataSource = this.tablaFactura;
-
+            this.dataGridViewTablaFactura.AllowUserToAddRows = false;
+            this.dataGridViewTablaFactura.MultiSelect = true;
+            
             int cantidadColumnas = this.dataGridViewTablaFactura.Columns.Count;
             int tamanio = this.dataGridViewTablaFactura.Width;
-            int tamanioColumnas = (tamanio / cantidadColumnas) - 1;
+            int tamanioColumnas = (tamanio / cantidadColumnas) - 9;
 
             foreach (DataGridViewColumn columna in this.dataGridViewTablaFactura.Columns)
                 columna.Width = tamanioColumnas;
@@ -235,6 +269,42 @@ namespace TP4
                 nombreProd = this.productosDeLimpieza.obtenerNombre((int)this.comboBoxCodProducto.SelectedItem);
 
             this.textBoxNombreProducto.Text = nombreProd;
+        }
+        #endregion
+
+        #region Botones
+        /// <summary>
+        /// Agregará el producto seleccionado a la factura.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Producto prod = this.productosDeComida.obtenerProducto((int)this.comboBoxCodProducto.SelectedItem);
+
+            if (prod is null)
+                prod = this.productosDeLimpieza.obtenerProducto((int)this.comboBoxCodProducto.SelectedItem);
+
+            this.tablaFactura.Rows.Add(new object[] { 0, prod.ID, prod.Nombre, prod.Precio, prod.Tipo, 0 });
+            this.tablaFactura.AcceptChanges();
+        }
+
+        /// <summary>
+        /// Quitará las filas seleccionadas de la factura.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow selectedRow in this.dataGridViewTablaFactura.SelectedRows)
+                this.tablaFactura.Rows[selectedRow.Index].Delete();
+            
+            this.tablaFactura.AcceptChanges();
+        }
+
+        private void btnConfirmarFactura_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 

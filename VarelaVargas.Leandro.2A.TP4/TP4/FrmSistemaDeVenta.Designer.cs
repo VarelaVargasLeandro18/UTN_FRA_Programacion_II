@@ -212,6 +212,7 @@ namespace TP4
             this.btnQuitar.TabIndex = 18;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
             // 
@@ -222,6 +223,7 @@ namespace TP4
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dataGridViewTablaFactura
             // 
@@ -234,7 +236,6 @@ namespace TP4
             this.dataGridViewTablaFactura.Location = new System.Drawing.Point(13, 191);
             this.dataGridViewTablaFactura.MultiSelect = false;
             this.dataGridViewTablaFactura.Name = "dataGridViewTablaFactura";
-            this.dataGridViewTablaFactura.RowHeadersVisible = false;
             this.dataGridViewTablaFactura.RowHeadersWidth = 51;
             this.dataGridViewTablaFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewTablaFactura.RowTemplate.Height = 24;
@@ -259,6 +260,7 @@ namespace TP4
             this.btnConfirmarFactura.TabIndex = 22;
             this.btnConfirmarFactura.Text = "Confirmar Factura";
             this.btnConfirmarFactura.UseVisualStyleBackColor = true;
+            this.btnConfirmarFactura.Click += new System.EventHandler(this.btnConfirmarFactura_Click);
             // 
             // lblTotal
             // 
