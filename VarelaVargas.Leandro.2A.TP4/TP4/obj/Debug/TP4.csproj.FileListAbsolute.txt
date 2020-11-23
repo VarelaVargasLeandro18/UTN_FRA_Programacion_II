@@ -8,3 +8,7 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\obj\Debug\TP4.csproj.CoreCompileInputs.cache
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\obj\Debug\TP4.exe
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\obj\Debug\TP4.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\bin\Debug\Entidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\bin\Debug\Entidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\bin\Debug\Entidades.dll.config
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\TP4\obj\Debug\TP4.csproj.CopyComplete

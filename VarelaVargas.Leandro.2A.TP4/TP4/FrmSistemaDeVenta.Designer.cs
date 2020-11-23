@@ -1,4 +1,6 @@
-﻿namespace TP4
+﻿using Entidades;
+
+namespace TP4
 {
     partial class FrmSistemaDeVenta
     {
@@ -34,19 +36,15 @@
             this.toolStripMenuItemClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.comboBoxTipoFactura = new System.Windows.Forms.ComboBox();
-            this.lblCodVendedor = new System.Windows.Forms.Label();
+            this.lblDNIVendedor = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxFecha = new System.Windows.Forms.TextBox();
             this.comboBoxCodVendedor = new System.Windows.Forms.ComboBox();
-            this.lblCodCliente = new System.Windows.Forms.Label();
+            this.lblDNICliente = new System.Windows.Forms.Label();
             this.comboBoxCodCliente = new System.Windows.Forms.ComboBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxDireccion = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblCodProducto = new System.Windows.Forms.Label();
+            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lblDNIProducto = new System.Windows.Forms.Label();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewTablaFactura = new System.Windows.Forms.DataGridView();
@@ -54,6 +52,8 @@
             this.btnConfirmarFactura = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.labelNombreVendedor = new System.Windows.Forms.Label();
+            this.textBoxNombreVendedor = new System.Windows.Forms.TextBox();
             this.menuStripBarraDeHerramientasPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTablaFactura)).BeginInit();
             this.SuspendLayout();
@@ -75,18 +75,21 @@
             this.toolStripMenuItemStock.Name = "toolStripMenuItemStock";
             this.toolStripMenuItemStock.Size = new System.Drawing.Size(59, 24);
             this.toolStripMenuItemStock.Text = "Stock";
+            this.toolStripMenuItemStock.Click += new System.EventHandler(this.toolStripMenuItemStock_Click);
             // 
             // toolStripMenuItemVendedores
             // 
             this.toolStripMenuItemVendedores.Name = "toolStripMenuItemVendedores";
             this.toolStripMenuItemVendedores.Size = new System.Drawing.Size(101, 24);
             this.toolStripMenuItemVendedores.Text = "Vendedores";
+            this.toolStripMenuItemVendedores.Click += new System.EventHandler(this.toolStripMenuItemVendedores_Click);
             // 
             // toolStripMenuItemClientes
             // 
             this.toolStripMenuItemClientes.Name = "toolStripMenuItemClientes";
             this.toolStripMenuItemClientes.Size = new System.Drawing.Size(75, 24);
             this.toolStripMenuItemClientes.Text = "Clientes";
+            this.toolStripMenuItemClientes.Click += new System.EventHandler(this.toolStripMenuItemClientes_Click);
             // 
             // lblTipoFactura
             // 
@@ -116,32 +119,32 @@
             this.comboBoxTipoFactura.Size = new System.Drawing.Size(56, 24);
             this.comboBoxTipoFactura.TabIndex = 2;
             // 
-            // lblCodVendedor
+            // lblDNIVendedor
             // 
-            this.lblCodVendedor.AutoSize = true;
-            this.lblCodVendedor.Location = new System.Drawing.Point(320, 33);
-            this.lblCodVendedor.Margin = new System.Windows.Forms.Padding(5);
-            this.lblCodVendedor.Name = "lblCodVendedor";
-            this.lblCodVendedor.Size = new System.Drawing.Size(138, 17);
-            this.lblCodVendedor.TabIndex = 3;
-            this.lblCodVendedor.Text = "Código de Vendedor";
+            this.lblDNIVendedor.AutoSize = true;
+            this.lblDNIVendedor.Location = new System.Drawing.Point(320, 33);
+            this.lblDNIVendedor.Margin = new System.Windows.Forms.Padding(5);
+            this.lblDNIVendedor.Name = "lblDNIVendedor";
+            this.lblDNIVendedor.Size = new System.Drawing.Size(117, 17);
+            this.lblDNIVendedor.TabIndex = 3;
+            this.lblDNIVendedor.Text = "DNI de Vendedor";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(717, 35);
+            this.lblFecha.Location = new System.Drawing.Point(320, 143);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(47, 17);
             this.lblFecha.TabIndex = 5;
             this.lblFecha.Text = "Fecha";
             // 
-            // textBox1
+            // textBoxFecha
             // 
-            this.textBox1.Location = new System.Drawing.Point(770, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxFecha.Location = new System.Drawing.Point(373, 141);
+            this.textBoxFecha.Name = "textBoxFecha";
+            this.textBoxFecha.ReadOnly = true;
+            this.textBoxFecha.Size = new System.Drawing.Size(205, 22);
+            this.textBoxFecha.TabIndex = 6;
             // 
             // comboBoxCodVendedor
             // 
@@ -151,15 +154,16 @@
             this.comboBoxCodVendedor.Name = "comboBoxCodVendedor";
             this.comboBoxCodVendedor.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCodVendedor.TabIndex = 7;
+            this.comboBoxCodVendedor.SelectedIndexChanged += new System.EventHandler(this.comboBoxCodVendedor_SelectedIndexChanged);
             // 
-            // lblCodCliente
+            // lblDNICliente
             // 
-            this.lblCodCliente.AutoSize = true;
-            this.lblCodCliente.Location = new System.Drawing.Point(17, 88);
-            this.lblCodCliente.Name = "lblCodCliente";
-            this.lblCodCliente.Size = new System.Drawing.Size(119, 17);
-            this.lblCodCliente.TabIndex = 8;
-            this.lblCodCliente.Text = "Código de Cliente";
+            this.lblDNICliente.AutoSize = true;
+            this.lblDNICliente.Location = new System.Drawing.Point(17, 88);
+            this.lblDNICliente.Name = "lblDNICliente";
+            this.lblDNICliente.Size = new System.Drawing.Size(98, 17);
+            this.lblDNICliente.TabIndex = 8;
+            this.lblDNICliente.Text = "DNI de Cliente";
             // 
             // comboBoxCodCliente
             // 
@@ -169,67 +173,33 @@
             this.comboBoxCodCliente.Name = "comboBoxCodCliente";
             this.comboBoxCodCliente.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCodCliente.TabIndex = 9;
+            this.comboBoxCodCliente.SelectedIndexChanged += new System.EventHandler(this.comboBoxCodCliente_SelectedIndexChanged);
             // 
-            // lblDNI
+            // textBoxNombreCliente
             // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(310, 88);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(31, 17);
-            this.lblDNI.TabIndex = 10;
-            this.lblDNI.Text = "DNI";
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(384, 90);
+            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
+            this.textBoxNombreCliente.ReadOnly = true;
+            this.textBoxNombreCliente.Size = new System.Drawing.Size(220, 22);
+            this.textBoxNombreCliente.TabIndex = 12;
             // 
-            // textBox2
+            // lblNombreCliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(348, 88);
-            this.textBox2.MaxLength = 8;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 11;
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Location = new System.Drawing.Point(320, 88);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(58, 17);
+            this.lblNombreCliente.TabIndex = 15;
+            this.lblNombreCliente.Text = "Nombre";
             // 
-            // textBoxNombre
+            // lblDNIProducto
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(541, 85);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.ReadOnly = true;
-            this.textBoxNombre.Size = new System.Drawing.Size(116, 22);
-            this.textBoxNombre.TabIndex = 12;
-            // 
-            // textBoxDireccion
-            // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(756, 85);
-            this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.ReadOnly = true;
-            this.textBoxDireccion.Size = new System.Drawing.Size(114, 22);
-            this.textBoxDireccion.TabIndex = 13;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(477, 85);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 17);
-            this.lblNombre.TabIndex = 15;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(683, 85);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(67, 17);
-            this.lblDireccion.TabIndex = 16;
-            this.lblDireccion.Text = "Dirección";
-            // 
-            // lblCodProducto
-            // 
-            this.lblCodProducto.AutoSize = true;
-            this.lblCodProducto.Location = new System.Drawing.Point(17, 143);
-            this.lblCodProducto.Name = "lblCodProducto";
-            this.lblCodProducto.Size = new System.Drawing.Size(133, 17);
-            this.lblCodProducto.TabIndex = 17;
-            this.lblCodProducto.Text = "Código de Producto";
+            this.lblDNIProducto.AutoSize = true;
+            this.lblDNIProducto.Location = new System.Drawing.Point(17, 143);
+            this.lblDNIProducto.Name = "lblDNIProducto";
+            this.lblDNIProducto.Size = new System.Drawing.Size(133, 17);
+            this.lblDNIProducto.TabIndex = 17;
+            this.lblDNIProducto.Text = "Código de Producto";
             // 
             // btnQuitar
             // 
@@ -266,7 +236,7 @@
             this.dataGridViewTablaFactura.RowHeadersWidth = 51;
             this.dataGridViewTablaFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewTablaFactura.RowTemplate.Height = 24;
-            this.dataGridViewTablaFactura.Size = new System.Drawing.Size(855, 300);
+            this.dataGridViewTablaFactura.Size = new System.Drawing.Size(857, 300);
             this.dataGridViewTablaFactura.TabIndex = 20;
             // 
             // comboBoxCodProducto
@@ -290,7 +260,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(722, 497);
+            this.lblTotal.Location = new System.Drawing.Point(717, 497);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(40, 17);
             this.lblTotal.TabIndex = 23;
@@ -303,12 +273,32 @@
             this.textBoxTotal.ReadOnly = true;
             this.textBoxTotal.Size = new System.Drawing.Size(100, 22);
             this.textBoxTotal.TabIndex = 24;
+            this.textBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelNombreVendedor
+            // 
+            this.labelNombreVendedor.AutoSize = true;
+            this.labelNombreVendedor.Location = new System.Drawing.Point(584, 37);
+            this.labelNombreVendedor.Name = "labelNombreVendedor";
+            this.labelNombreVendedor.Size = new System.Drawing.Size(58, 17);
+            this.labelNombreVendedor.TabIndex = 26;
+            this.labelNombreVendedor.Text = "Nombre";
+            // 
+            // textBoxNombreVendedor
+            // 
+            this.textBoxNombreVendedor.Location = new System.Drawing.Point(648, 37);
+            this.textBoxNombreVendedor.Name = "textBoxNombreVendedor";
+            this.textBoxNombreVendedor.ReadOnly = true;
+            this.textBoxNombreVendedor.Size = new System.Drawing.Size(220, 22);
+            this.textBoxNombreVendedor.TabIndex = 25;
             // 
             // FrmSistemaDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 541);
+            this.Controls.Add(this.labelNombreVendedor);
+            this.Controls.Add(this.textBoxNombreVendedor);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnConfirmarFactura);
@@ -316,19 +306,15 @@
             this.Controls.Add(this.dataGridViewTablaFactura);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnQuitar);
-            this.Controls.Add(this.lblCodProducto);
-            this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.textBoxDireccion);
-            this.Controls.Add(this.textBoxNombre);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblDNI);
+            this.Controls.Add(this.lblDNIProducto);
+            this.Controls.Add(this.lblNombreCliente);
+            this.Controls.Add(this.textBoxNombreCliente);
             this.Controls.Add(this.comboBoxCodCliente);
-            this.Controls.Add(this.lblCodCliente);
+            this.Controls.Add(this.lblDNICliente);
             this.Controls.Add(this.comboBoxCodVendedor);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxFecha);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblCodVendedor);
+            this.Controls.Add(this.lblDNIVendedor);
             this.Controls.Add(this.comboBoxTipoFactura);
             this.Controls.Add(this.lblTipoFactura);
             this.Controls.Add(this.menuStripBarraDeHerramientasPrincipal);
@@ -354,19 +340,15 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClientes;
         private System.Windows.Forms.Label lblTipoFactura;
         private System.Windows.Forms.ComboBox comboBoxTipoFactura;
-        private System.Windows.Forms.Label lblCodVendedor;
+        private System.Windows.Forms.Label lblDNIVendedor;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxFecha;
         private System.Windows.Forms.ComboBox comboBoxCodVendedor;
-        private System.Windows.Forms.Label lblCodCliente;
+        private System.Windows.Forms.Label lblDNICliente;
         private System.Windows.Forms.ComboBox comboBoxCodCliente;
-        private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBoxDireccion;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblCodProducto;
+        private System.Windows.Forms.TextBox textBoxNombreCliente;
+        private System.Windows.Forms.Label lblNombreCliente;
+        private System.Windows.Forms.Label lblDNIProducto;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridViewTablaFactura;
@@ -374,6 +356,9 @@
         private System.Windows.Forms.Button btnConfirmarFactura;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox textBoxTotal;
+        private System.Windows.Forms.Label labelNombreVendedor;
+        private System.Windows.Forms.TextBox textBoxNombreVendedor;
+        
     }
 }
 
