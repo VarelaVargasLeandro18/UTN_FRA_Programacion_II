@@ -54,6 +54,8 @@ namespace TP4
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.labelNombreVendedor = new System.Windows.Forms.Label();
             this.textBoxNombreVendedor = new System.Windows.Forms.TextBox();
+            this.labelNombreProducto = new System.Windows.Forms.Label();
+            this.textBoxNombreProducto = new System.Windows.Forms.TextBox();
             this.menuStripBarraDeHerramientasPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTablaFactura)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +134,7 @@ namespace TP4
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(320, 143);
+            this.lblFecha.Location = new System.Drawing.Point(645, 91);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(47, 17);
             this.lblFecha.TabIndex = 5;
@@ -140,10 +142,10 @@ namespace TP4
             // 
             // textBoxFecha
             // 
-            this.textBoxFecha.Location = new System.Drawing.Point(373, 141);
+            this.textBoxFecha.Location = new System.Drawing.Point(698, 89);
             this.textBoxFecha.Name = "textBoxFecha";
             this.textBoxFecha.ReadOnly = true;
-            this.textBoxFecha.Size = new System.Drawing.Size(205, 22);
+            this.textBoxFecha.Size = new System.Drawing.Size(146, 22);
             this.textBoxFecha.TabIndex = 6;
             // 
             // comboBoxCodVendedor
@@ -247,6 +249,7 @@ namespace TP4
             this.comboBoxCodProducto.Name = "comboBoxCodProducto";
             this.comboBoxCodProducto.Size = new System.Drawing.Size(121, 24);
             this.comboBoxCodProducto.TabIndex = 21;
+            this.comboBoxCodProducto.SelectedIndexChanged += new System.EventHandler(this.comboBoxCodProducto_SelectedIndexChanged);
             // 
             // btnConfirmarFactura
             // 
@@ -292,11 +295,30 @@ namespace TP4
             this.textBoxNombreVendedor.Size = new System.Drawing.Size(220, 22);
             this.textBoxNombreVendedor.TabIndex = 25;
             // 
+            // labelNombreProducto
+            // 
+            this.labelNombreProducto.AutoSize = true;
+            this.labelNombreProducto.Location = new System.Drawing.Point(320, 143);
+            this.labelNombreProducto.Name = "labelNombreProducto";
+            this.labelNombreProducto.Size = new System.Drawing.Size(58, 17);
+            this.labelNombreProducto.TabIndex = 27;
+            this.labelNombreProducto.Text = "Nombre";
+            // 
+            // textBoxNombreProducto
+            // 
+            this.textBoxNombreProducto.Location = new System.Drawing.Point(384, 145);
+            this.textBoxNombreProducto.Name = "textBoxNombreProducto";
+            this.textBoxNombreProducto.ReadOnly = true;
+            this.textBoxNombreProducto.Size = new System.Drawing.Size(220, 22);
+            this.textBoxNombreProducto.TabIndex = 28;
+            // 
             // FrmSistemaDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 541);
+            this.Controls.Add(this.textBoxNombreProducto);
+            this.Controls.Add(this.labelNombreProducto);
             this.Controls.Add(this.labelNombreVendedor);
             this.Controls.Add(this.textBoxNombreVendedor);
             this.Controls.Add(this.textBoxTotal);
@@ -358,7 +380,8 @@ namespace TP4
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label labelNombreVendedor;
         private System.Windows.Forms.TextBox textBoxNombreVendedor;
-        
+        private System.Windows.Forms.Label labelNombreProducto;
+        private System.Windows.Forms.TextBox textBoxNombreProducto;
     }
 }
 

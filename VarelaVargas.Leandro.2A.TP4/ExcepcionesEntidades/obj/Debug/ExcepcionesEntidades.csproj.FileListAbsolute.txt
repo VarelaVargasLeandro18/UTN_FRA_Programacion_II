@@ -1,0 +1,6 @@
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\bin\Debug\ExcepcionesEntidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\bin\Debug\ExcepcionesEntidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\obj\Debug\ExcepcionesEntidades.csprojAssemblyReference.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\obj\Debug\ExcepcionesEntidades.csproj.CoreCompileInputs.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\obj\Debug\ExcepcionesEntidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\ExcepcionesEntidades\obj\Debug\ExcepcionesEntidades.pdb

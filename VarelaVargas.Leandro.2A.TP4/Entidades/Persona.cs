@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Entidades
@@ -21,7 +22,13 @@ namespace Entidades
         public string Nombre
         {
             get { return this.nombre; }
-            set { this.nombre = value; }
+            set
+            {
+                Regex soloLetras = new Regex(@"[\w ]+");
+
+                if (soloLetras.IsMatch(value))
+                    this.nombre = value;
+            }
         }
         #endregion
 

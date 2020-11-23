@@ -5,3 +5,6 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\En
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.dll
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.pdb
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CopyComplete

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using ExcepcionesEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,14 +21,16 @@ namespace TP4
         /// </summary>
         private delegate void Actualizaciones();
 
-        private DataTable tablaFactura;
-        private Personas clientes;
-        private Personas vendedores;
-
         /// <summary>
         /// Evento de actualización de controles del formulario.
         /// </summary>
         private event Actualizaciones actualizaciones;
+        private DataTable tablaFactura;
+        private Personas clientes;
+        private Personas vendedores;
+        private Productos<Comida> productosDeComida;
+        private Productos<Limpieza> productosDeLimpieza;
+
 
         public FrmSistemaDeVenta()
         {
@@ -37,9 +40,14 @@ namespace TP4
             this.clientes = new Personas();
             this.vendedores = new Personas();
 
+            // Instanciamos ProductosDeComida y ProductosDeLimpieza
+            this.productosDeComida = new Productos<Comida>();
+            this.productosDeLimpieza = new Productos<Limpieza>();
+
             //Personas - actualizacion
             this.actualizaciones += this.actualizarClientes;
             this.actualizaciones += this.actualizarVendedores;
+            this.actualizaciones += this.actualizarProductos;
             this.actualizaciones += this.actualizarCombos;
             this.actualizaciones += this.actualizarFecha;
             this.actualizaciones.Invoke();
@@ -59,8 +67,10 @@ namespace TP4
         private void generarTablaFactura(object sender, EventArgs args)
         {
             this.tablaFactura = new DataTable("Nueva Factura");
+            this.tablaFactura.ColumnChanged += TablaFactura_ColumnChanged;
 
             this.tablaFactura.Columns.Add("Cantidad");
+            this.tablaFactura.Columns[0].DataType = typeof(int);
             this.tablaFactura.Columns[0].ReadOnly = false;
 
             this.tablaFactura.Columns.Add("Código Producto");
@@ -74,6 +84,22 @@ namespace TP4
 
             this.tablaFactura.Columns.Add("Precio Total (Unitario * Cantidad)");
             this.tablaFactura.Columns[4].ReadOnly = true;
+        }
+
+        /// <summary>
+        /// Actualizará el precio Total de la factura en el Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TablaFactura_ColumnChanged(object sender, DataColumnChangeEventArgs e)
+        {
+            float precioTotal = float.Parse(this.textBoxTotal.Text);
+            int Cantidad = int.Parse(e.Row[0].ToString());
+            float precio = float.Parse(e.Row[4].ToString());
+
+            precioTotal += (precio * Cantidad);
+
+            this.textBoxTotal.Text = precioTotal.ToString();
         }
 
         /// <summary>
@@ -97,11 +123,35 @@ namespace TP4
 
         #region Actualizaciones
         /// <summary>
+        /// Actualizará las variables de los productos con la Base de Datos.
+        /// </summary>
+        private void actualizarProductos()
+        {
+            string Tabla = "Productos";
+            try
+            {
+                this.productosDeComida.actualizarMedianteBD(Tabla);
+                this.productosDeLimpieza.actualizarMedianteBD(Tabla);
+            }
+            catch (ExceptionErrorActualizacionProductos ex)
+            {
+                MessageBox.Show(ex.Message + " - " + ex.InnerException.Message);
+            }
+        }
+
+        /// <summary>
         /// Actualizará la variable "clientes" con la Base de Datos.
         /// </summary>
         private void actualizarClientes()
         {
-            this.clientes.actualizarMedianteBD("Clientes");
+            try
+            {
+                this.clientes.actualizarMedianteBD("Clientes");
+            }
+            catch (ExceptionErrorActualizacionPersonas ex)
+            {
+                MessageBox.Show(ex.Message + " - " + ex.InnerException.Message);
+            }
         }
         
         /// <summary>
@@ -117,8 +167,12 @@ namespace TP4
         /// </summary>
         private void actualizarCombos ()
         {
+            List<int> idsProductos = new List<int>(this.productosDeComida.obtenerIDs());
+            idsProductos.AddRange(this.productosDeLimpieza.obtenerIDs());
+
             this.comboBoxCodCliente.DataSource = this.clientes.obtenerDNIs();
             this.comboBoxCodVendedor.DataSource = this.vendedores.obtenerDNIs();
+            this.comboBoxCodProducto.DataSource = idsProductos;
         }
         
         /// <summary>
@@ -166,6 +220,21 @@ namespace TP4
         private void comboBoxCodVendedor_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.textBoxNombreVendedor.Text = this.vendedores.obtenerNombre( ((int)this.comboBoxCodVendedor.SelectedItem) );
+        }
+
+        /// <summary>
+        /// Actualizará el nombre del Producto en el Form según corresponda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBoxCodProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nombreProd = this.productosDeComida.obtenerNombre((int)this.comboBoxCodProducto.SelectedItem);
+
+            if (nombreProd is null)
+                nombreProd = this.productosDeLimpieza.obtenerNombre((int)this.comboBoxCodProducto.SelectedItem);
+
+            this.textBoxNombreProducto.Text = nombreProd;
         }
         #endregion
 

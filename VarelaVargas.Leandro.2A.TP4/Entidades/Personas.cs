@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcepcionesEntidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,6 +19,10 @@ namespace Entidades
         }
 
         #region Métodos
+        /// <summary>
+        /// Devuelve los DNI de las personas en forma de lista.
+        /// </summary>
+        /// <returns>DNIs de Personas.</returns>
         public List<int> obtenerDNIs ()
         {
             List<int> DNIs = new List<int>();
@@ -28,6 +33,12 @@ namespace Entidades
             return DNIs;
         }
 
+        /// <summary>
+        /// Obtiene el nombre de la persona cuyo DNI coincida.
+        /// En caso de que no exista devuelve null.
+        /// </summary>
+        /// <param name="DNI"></param>
+        /// <returns></returns>
         public string obtenerNombre (int DNI)
         {
             string Nombre = null;
@@ -44,7 +55,7 @@ namespace Entidades
             return Nombre;
         }
 
-        public void actualizarMedianteBD(string nombreTabla)
+        public void actualizarMedianteBD(string NombreTabla)
         {
             SqlConnection conn = null;
             SqlCommand command = null;
@@ -55,14 +66,14 @@ namespace Entidades
                 this.lpersonas = new List<Persona>();
 
                 conn = new SqlConnection(Properties.Settings.Default.BDConn);
-                string Comando = "SELECT * FROM " + nombreTabla;
+                string Comando = "SELECT * FROM " + NombreTabla;
                 Persona paraAgregarALaLista;
                 command = new SqlCommand(Comando, conn);
                 conn.Open();
                 reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
-                    Console.WriteLine("H");
                     paraAgregarALaLista = new Persona();
                     paraAgregarALaLista.DNI = (int)reader["DNI"];
                     paraAgregarALaLista.Nombre = (string)reader["Nombre"];
@@ -72,7 +83,7 @@ namespace Entidades
             }
             catch (SqlException ex)
             {
-                throw ex;
+                throw new ExceptionErrorActualizacionPersonas(ex);
             }
             finally
             {
