@@ -16,9 +16,9 @@ using System.Windows.Forms;
  * Clase 16: Test Unitarios.
  * Clase 17: Tipos Genéricos. Listo
  * Clase 18: Interfaces. Listo
- * Clase 19: Archivos y Serialización.
+ * Clase 19: Archivos y Serialización. Listo
  * Clase 21 y 22: SQL y BD. Listo
- * Clase 23: Hilos.
+ * Clase 23: Hilos. Listo
  * Clase 24: Eventos. Listo
  * Clase 25: Métodos de Extensión. 
  */
