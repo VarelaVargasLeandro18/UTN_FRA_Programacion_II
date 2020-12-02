@@ -41,20 +41,40 @@ namespace Entidades
         /// <returns></returns>
         public string obtenerNombre (int DNI)
         {
+            Persona ret = this.obtenerPersona(DNI);
             string Nombre = null;
 
-            foreach (Persona persona in this.lpersonas)
-            {
-                if ( persona.DNI == DNI )
-                {
-                    Nombre = persona.Nombre;
-                    break;
-                }
-            }
+            if (!(ret is null))
+                Nombre = ret.Nombre;
 
             return Nombre;
         }
 
+        /// <summary>
+        /// Obtiene a la persona con el DNI requerido.
+        /// </summary>
+        /// <param name="DNI"></param>
+        /// <returns></returns>
+        public Persona obtenerPersona (int DNI)
+        {
+            Persona ret = null;
+
+            foreach (Persona persona in this.lpersonas)
+            {
+                if (persona.DNI == DNI)
+                {
+                    ret = persona;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Obtiene todas las personas que se encuentren en la Tabla especificada.
+        /// </summary>
+        /// <param name="NombreTabla"></param>
         public void actualizarMedianteBD(string NombreTabla)
         {
             SqlConnection conn = null;
@@ -97,8 +117,7 @@ namespace Entidades
             StringBuilder stringBuilder = new StringBuilder("PERSONAS:\n");
 
             foreach (Persona persona in this.lpersonas)
-                stringBuilder.Append(persona.ToString())
-                    .Append("--------------------------------------------------");
+                stringBuilder.AppendLine(persona.ToString());
 
             return stringBuilder.ToString();
         }

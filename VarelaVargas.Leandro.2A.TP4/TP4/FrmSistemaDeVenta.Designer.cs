@@ -342,9 +342,7 @@ namespace TP4
             this.Controls.Add(this.comboBoxTipoFactura);
             this.Controls.Add(this.lblTipoFactura);
             this.Controls.Add(this.menuStripBarraDeHerramientasPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStripBarraDeHerramientasPrincipal;
-            this.MaximizeBox = false;
             this.Name = "FrmSistemaDeVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIstema De Venta";

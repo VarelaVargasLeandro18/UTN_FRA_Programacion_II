@@ -9,9 +9,23 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class Productos<T> : IEnBD where T : Producto
     {
         private List<T> lproductos;
+
+        #region Necesario para Serializar
+        public Productos()
+        {
+            this.lproductos = new List<T>();
+        }
+
+        public List<T> LProductos
+        {
+            get { return this.lproductos; }
+            set { this.lproductos = value; }
+        }
+        #endregion
 
         #region Métodos
         /// <summary>
@@ -49,6 +63,11 @@ namespace Entidades
             return ret;
         }
 
+        /// <summary>
+        /// Obtiene un producto en la lista por ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public T obtenerProducto(int id)
         {
             T prod = null;
@@ -65,6 +84,10 @@ namespace Entidades
             return prod;
         }
 
+        /// <summary>
+        /// Obtiene la lista de productos en Stock de la tabla.
+        /// </summary>
+        /// <param name="NombreTabla"></param>
         public void actualizarMedianteBD(string NombreTabla)
         {
             SqlConnection conn = null;
@@ -117,6 +140,57 @@ namespace Entidades
                     conn.Close();
             }
         }
+
+        public override string ToString()
+        {
+            float precioTotal = 0;
+            StringBuilder strBuilder = new StringBuilder("PRODUCTOS:\n");
+
+            foreach (Producto p in this.lproductos)
+            {
+                precioTotal += p.Cantidad * p.Precio;
+                strBuilder.AppendLine(p.ToString());
+            }
+
+            strBuilder.AppendLine("TOTAL: " + precioTotal);
+
+            return strBuilder.ToString();
+        }
         #endregion
+
+        #region Operadores
+        /// <summary>
+        /// Agrega un producto.
+        /// </summary>
+        /// <param name="ps"></param>
+        /// <param name="p"></param>
+        /// <returns>'True' si la operación es exitosa. 'False' caso contrario.</returns>
+        public static bool operator +(Productos<T> ps, Producto p)
+        {
+            bool ret = !(ps.LProductos.Contains(p)) && !(p is null);
+
+            if (ret)
+                ps.LProductos.Add((T)p);
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Elimina un producto.
+        /// </summary>
+        /// <param name="ps"></param>
+        /// <param name="p"></param>
+        /// <returns>'True' si la operación es exitosa. 'False' caso contrario.</returns>
+        public static bool operator -(Productos<T>ps, Producto p)
+        {
+            bool ret = ps.LProductos.Contains(p);
+
+            if (ret)
+                ps.LProductos.Remove((T)p);
+
+            return ret;
+        }
+        #endregion
+
     }
 }

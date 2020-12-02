@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
     [Serializable]
+    [XmlInclude(typeof(Comida))]
+    [XmlInclude(typeof(Limpieza))]
     public abstract class Producto
     {
         private int id;
         private string nombre;
         private float precio;
         private int cantidad;
+
+        public Producto()
+        { }
 
         #region Propiedades
         public int ID
@@ -48,6 +55,15 @@ namespace Entidades
             get;
         }
         #endregion
-        
+
+        public override string ToString()
+        {
+            float precioTotal = this.cantidad * this.precio;
+            StringBuilder strBuilder = new StringBuilder("PRODUCTO: ")
+                .AppendLine($"ID: {this.id}, Nombre: {this.nombre}, Precio: {this.precio}, Cantidad: {this.cantidad}, Total Producto: {precioTotal}");
+            
+            return strBuilder.ToString();
+        }
+
     }
 }

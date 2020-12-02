@@ -4,13 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [Serializable]
+    [XmlInclude(typeof(Vendedor))]
+    [XmlInclude(typeof(Cliente))]
     public class Persona
     {
         private int dni;
         private string nombre;
+
+        public Persona()
+        { }
+
+        public Persona (int dni, string nombre)
+        {
+            this.dni = dni;
+            this.nombre = nombre;
+        }
 
         #region Propiedades
         public int DNI
