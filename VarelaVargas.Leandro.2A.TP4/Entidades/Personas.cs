@@ -129,5 +129,39 @@ namespace Entidades
         }
         #endregion
 
+        #region Operadores
+        /// <summary>
+        /// Agrega una persona a la lista.
+        /// </summary>
+        /// <param name="pers">Lista de personas donde se agregará una persona</param>
+        /// <param name="p">Persona a agregar</param>
+        /// <returns>True si se pudo efectuar la operación. Caso contrario false.</returns>
+        public static bool operator +(Personas pers, Persona p)
+        {
+            bool ret = !(pers.lpersonas.Contains(p)) && !(p is null);
+
+            if (ret)
+                pers.lpersonas.Add(p);
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Elimina una persona de la lista.
+        /// </summary>
+        /// <param name="pers">Lista de personas donde se eliminará una persona</param>
+        /// <param name="p">Persona a eliminar</param>
+        /// <returns>True si se pudo efectuar la operación. Caso contrario false.</returns>
+        public static bool operator -(Personas pers, Persona p)
+        {
+            bool ret = pers.lpersonas.Contains(p);
+
+            if (ret)
+                pers.lpersonas.Remove(p);
+
+            return ret;
+        }
+        #endregion
+
     }
 }

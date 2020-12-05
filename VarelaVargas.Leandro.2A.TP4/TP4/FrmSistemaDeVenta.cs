@@ -12,11 +12,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*
- * Clase 16: Test Unitarios.
- * Clase 21 y 22: DataTable. 
- */
-
 namespace TP4
 {
     public partial class FrmSistemaDeVenta : Form

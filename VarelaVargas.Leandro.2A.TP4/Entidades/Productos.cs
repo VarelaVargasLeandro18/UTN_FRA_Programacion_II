@@ -177,8 +177,15 @@ namespace Entidades
         {
             bool ret = !(ps.LProductos.Contains(p)) && !(p is null);
 
-            if (ret)
-                ps.LProductos.Add((T)p);
+            try
+            {
+                if (ret)
+                    ps.LProductos.Add((T)p);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return ret;
         }
@@ -193,8 +200,15 @@ namespace Entidades
         {
             bool ret = ps.LProductos.Contains(p);
 
-            if (ret)
-                ps.LProductos.Remove((T)p);
+            try
+            {
+                if (ret)
+                    ps.LProductos.Remove((T)p);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
             return ret;
         }
