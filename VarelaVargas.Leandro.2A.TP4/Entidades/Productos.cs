@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase 21 y 22. SQL
+    /// Clase 17. Generics.
+    /// Clase 18. Interfaces.
+    /// En esta clase se almacenará una lista de Productos.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     [Serializable]
     public class Productos<T> : IEnBD where T : Producto
     {
@@ -85,6 +92,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 18. Interfaces.
         /// Obtiene la lista de productos en Stock de la tabla.
         /// </summary>
         /// <param name="NombreTabla"></param>

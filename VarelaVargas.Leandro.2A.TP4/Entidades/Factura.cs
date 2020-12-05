@@ -9,6 +9,12 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase 23. Hilos.
+    /// Clase 17. Archivos y Serialización.
+    /// Esta clase contendrá toda la información para la generación de una factura.
+    /// Permitirá Serialización y creación de archivos de texto.
+    /// </summary>
     [Serializable]
     public class Factura
     {
@@ -57,6 +63,7 @@ namespace Entidades
 
         #region Métodos
         /// <summary>
+        /// Clase 23. Hilos.
         /// Invoca un hilo que guardará la factura como un Txt.
         /// </summary>
         public void GuardarComoTxt()
@@ -66,6 +73,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 23. Hilos.
         /// Invoca un hilo que serializará la factura en formato Xml.
         /// </summary>
         public void GuardarComoXml()
@@ -75,6 +83,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 17. Archivos y Serialización.
         /// Guardará la factura en la carpeta "Documentos" del usuario, cuyo nombre será "Factura" seguido de la fecha de Emisión de la factura
         /// </summary>
         private void privadoGuardarComoTxt()
@@ -94,6 +103,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 17. Archivos y Serialización.
         /// Guardará la factura en la carpeta "Documentos" del usuario, cuyo nombre será "Factura" seguido de la fecha de Emisión de la factura en formato Xml
         /// </summary>
         private void privadoGuardarComoXml()

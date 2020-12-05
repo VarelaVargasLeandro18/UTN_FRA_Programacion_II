@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase Cliente extiende de Persona
+    /// </summary>
     public class Cliente : Persona
     {
+        #region Constructores
         public Cliente()
         { }
 
         public Cliente (Persona p)
             : base (p.DNI, p.Nombre)
         {}
+        #endregion
 
         public override string ToString()
         {

@@ -5,6 +5,9 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Esta clase contiene toda la información referente a un Producto.
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(Comida))]
     [XmlInclude(typeof(Limpieza))]

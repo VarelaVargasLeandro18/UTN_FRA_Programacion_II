@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Vendedor extiende de Persona.
+    /// </summary>
     public class Vendedor : Persona
     {
         public Vendedor()

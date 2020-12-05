@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EFormsSQL.cs" />
+    <Compile Include="FacturaExtension.cs" />
+    <Compile Include="FormSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSQL.Designer.cs">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSistemaDeVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormSQL.resx">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSistemaDeVenta.resx">
       <DependentUpon>FrmSistemaDeVenta.cs</DependentUpon>
     </EmbeddedResource>

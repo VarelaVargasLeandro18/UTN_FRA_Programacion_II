@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase 21 y 22. SQL.
+    /// Clase 18 Interfaces.
+    /// Esta clase contendrá una lista de personas y podrá obtener datos de la BD.
+    /// </summary>
     public class Personas : IEnBD
     {
         private List<Persona> lpersonas;
@@ -29,7 +34,7 @@ namespace Entidades
 
             foreach (Persona persona in this.lpersonas)
                 DNIs.Add(persona.DNI);
-
+            
             return DNIs;
         }
 
@@ -72,6 +77,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 18. Interfaces.
         /// Obtiene todas las personas que se encuentren en la Tabla especificada.
         /// </summary>
         /// <param name="NombreTabla"></param>
@@ -86,7 +92,7 @@ namespace Entidades
                 this.lpersonas = new List<Persona>();
 
                 conn = new SqlConnection(Properties.Settings.Default.BDConn);
-                string Comando = "SELECT * FROM " + NombreTabla;
+                string Comando = "SELECT * FROM " + NombreTabla + ";";
                 Persona paraAgregarALaLista;
                 command = new SqlCommand(Comando, conn);
                 conn.Open();
@@ -102,7 +108,7 @@ namespace Entidades
 
             }
             catch (SqlException ex)
-            {
+            { 
                 throw new ExceptionErrorActualizacionPersonas(ex);
             }
             finally

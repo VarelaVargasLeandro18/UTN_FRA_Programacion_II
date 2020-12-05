@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase 18 Interfaces.
+    /// </summary>
     interface IEnBD
     {
         /// <summary>

@@ -8,6 +8,9 @@ using System.Xml.Serialization;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Esta clase contenerá los datos de una persona.
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(Vendedor))]
     [XmlInclude(typeof(Cliente))]
@@ -16,6 +19,7 @@ namespace Entidades
         private int dni;
         private string nombre;
 
+        #region Constructores
         public Persona()
         { }
 
@@ -24,6 +28,7 @@ namespace Entidades
             this.dni = dni;
             this.nombre = nombre;
         }
+        #endregion
 
         #region Propiedades
         public int DNI

@@ -13,16 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * Clase 15: Exception. Listo
  * Clase 16: Test Unitarios.
- * Clase 17: Tipos Genéricos. Listo
- * Clase 18: Interfaces. Listo
- * Clase 19: Archivos y Serialización. Listo
- * Clase 21 y 22: SQL y BD. Listo
  * Clase 21 y 22: DataTable. 
- * Clase 23: Hilos. Listo
- * Clase 24: Eventos. Listo
- * Clase 25: Métodos de Extensión. 
  */
 
 namespace TP4
@@ -46,6 +38,7 @@ namespace TP4
         private Productos<Limpieza> productosDeLimpieza;
         private Productos<Producto> productosSeleccionados;
 
+        private FormSQL frmSQL;
 
         public FrmSistemaDeVenta()
         {
@@ -59,6 +52,10 @@ namespace TP4
             this.productosDeComida = new Productos<Comida>();
             this.productosDeLimpieza = new Productos<Limpieza>();
 
+            //Frm - Load
+            this.Load += this.generarTablaFactura;
+            this.Load += this.configurarDataGridView;
+
             //Personas - actualizacion
             this.actualizaciones += this.actualizarTipoFactura;
             this.actualizaciones += this.actualizarClientes;
@@ -69,10 +66,7 @@ namespace TP4
             this.actualizaciones += this.actualizarPrecio;
             this.actualizaciones += this.actualizarProductoSeleccionados;
             this.actualizaciones.Invoke();
-
-            //Frm - Load
-            this.Load += this.generarTablaFactura;
-            this.Load += this.configurarDataGridView;
+            this.actualizaciones += this.actualizarTabla;
 
         }
 
@@ -118,13 +112,27 @@ namespace TP4
         {
             this.dataGridViewTablaFactura.DataSource = this.tablaFactura;
             this.dataGridViewTablaFactura.AllowUserToAddRows = false;
-            
-            int cantidadColumnas = this.dataGridViewTablaFactura.Columns.Count;
-            int tamanio = this.dataGridViewTablaFactura.Width;
-            int tamanioColumnas = (tamanio / cantidadColumnas) - 9;
 
-            foreach (DataGridViewColumn columna in this.dataGridViewTablaFactura.Columns)
-                columna.Width = tamanioColumnas;
+            this.dataGridViewTablaFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            this.dataGridViewTablaFactura.DataError += DataGridViewTablaFactura_DataError;
+        }
+
+        /// <summary>
+        /// Mostrará un MessageBox en caso de que haya algún error.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewTablaFactura_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                throw e.Exception;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, $"Error: {ex.Message}\nStackTrace: {ex.StackTrace}", "ERROR DEL DATAGRIDVIEW", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         #endregion
 
@@ -157,7 +165,7 @@ namespace TP4
                 }
             }
             else
-                this.textBoxTotal.Text = "0";
+                this.textBoxTotal.Text = "$0";
 
         }
 
@@ -186,8 +194,8 @@ namespace TP4
                 {
                     precioTotal += (precio * Cantidad);
 
-                    e.Row[5] = precio * Cantidad;
-                    this.textBoxTotal.Text = "$" + precioTotal.ToString();
+                    e.Row[5] = (precio * Cantidad).ToString("0.00");
+                    this.textBoxTotal.Text = "$" + precioTotal.ToString("00.00");
 
                     this.tablaFactura.AcceptChanges();
                     this.productosSeleccionados.obtenerProducto(codProd).Cantidad = Cantidad;
@@ -201,6 +209,14 @@ namespace TP4
         #endregion
 
         #region Actualizaciones
+        /// <summary>
+        /// Permite que se invoquen actualizaciones desde otra parte.
+        /// </summary>
+        public void invocarActualizaciones()
+        {
+            this.actualizaciones.Invoke();
+        }
+
         /// <summary>
         /// Seteará el Combo 'TipoFactura' a su valor por defecto.
         /// </summary>
@@ -246,7 +262,15 @@ namespace TP4
         /// </summary>
         private void actualizarVendedores()
         {
-            this.vendedores.actualizarMedianteBD("Vendedores");
+            try
+            {
+                this.vendedores.actualizarMedianteBD("Vendedores");
+                this.vendedores.obtenerDNIs();
+            }
+            catch (ExceptionErrorActualizacionPersonas ex)
+            {
+                MessageBox.Show(ex.Message + " - " + ex.InnerException.Message);
+            }
         }
         
         /// <summary>
@@ -285,22 +309,58 @@ namespace TP4
         {
             this.productosSeleccionados = new Productos<Producto>();
         }
+
+        private void actualizarTabla()
+        {
+            this.tablaFactura.Clear();
+            this.tablaFactura.AcceptChanges();
+        }
         #endregion
 
         #region Barra de Herramientas
+        /// <summary>
+        /// Al hacer click en el botón Stock de la barra de herramientas se abrirá un Form para
+        /// manipular su tabla en la BD.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripMenuItemStock_Click(object sender, EventArgs e)
         {
-
+            if ( this.frmSQL is null || this.frmSQL.IsDisposed )
+            {
+                this.frmSQL = new FormSQL(EFormsSQL.Stock);
+                this.frmSQL.Show(this);
+            }
         }
 
+        /// <summary>
+        /// Al hacer click en el botón Vendedores de la barra de herramientas se abrirá un Form para
+        /// manipular su tabla en la BD.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripMenuItemVendedores_Click(object sender, EventArgs e)
         {
-
+            if (this.frmSQL is null || this.frmSQL.IsDisposed)
+            {
+                this.frmSQL = new FormSQL(EFormsSQL.Vendedores);
+                this.frmSQL.Show(this);
+            }
         }
 
+        /// <summary>
+        /// Al hacer click en el botón Vendedores de la barra de herramientas se abrirá un Form para
+        /// manipular su tabla en la BD.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripMenuItemClientes_Click(object sender, EventArgs e)
         {
-
+            if (this.frmSQL is null || this.frmSQL.IsDisposed)
+            {
+                this.frmSQL = new FormSQL(EFormsSQL.Clientes);
+                this.frmSQL.Show(this);
+            }
         }
         #endregion
 
@@ -398,10 +458,24 @@ namespace TP4
             factura.TipoFactura = tipoFactura;
             factura.Productos = this.productosSeleccionados;
 
-            factura.GuardarComoTxt();
-            factura.GuardarComoXml();
+            DialogResult rsGuardar = MessageBox.Show(factura.CustomPrintFactura(), "¿Desea guardar la factura?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rsActualizar;
+
+            if (rsGuardar == DialogResult.Yes)
+            {
+                factura.GuardarComoTxt();
+                factura.GuardarComoXml();
+                this.actualizaciones.Invoke();
+            }
+            else
+            {
+                rsActualizar = MessageBox.Show("¿Quiere empezar otra factura? Los datos ingresados volverán a su estado original", "Actualizar factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (rsActualizar == DialogResult.Yes)
+                    this.actualizaciones.Invoke();
+            }
+
         }
         #endregion
-
     }
 }

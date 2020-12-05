@@ -69,27 +69,27 @@ namespace TP4
             this.toolStripMenuItemClientes});
             this.menuStripBarraDeHerramientasPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripBarraDeHerramientasPrincipal.Name = "menuStripBarraDeHerramientasPrincipal";
-            this.menuStripBarraDeHerramientasPrincipal.Size = new System.Drawing.Size(882, 28);
+            this.menuStripBarraDeHerramientasPrincipal.Size = new System.Drawing.Size(882, 30);
             this.menuStripBarraDeHerramientasPrincipal.TabIndex = 0;
             // 
             // toolStripMenuItemStock
             // 
             this.toolStripMenuItemStock.Name = "toolStripMenuItemStock";
-            this.toolStripMenuItemStock.Size = new System.Drawing.Size(59, 24);
+            this.toolStripMenuItemStock.Size = new System.Drawing.Size(59, 26);
             this.toolStripMenuItemStock.Text = "Stock";
             this.toolStripMenuItemStock.Click += new System.EventHandler(this.toolStripMenuItemStock_Click);
             // 
             // toolStripMenuItemVendedores
             // 
             this.toolStripMenuItemVendedores.Name = "toolStripMenuItemVendedores";
-            this.toolStripMenuItemVendedores.Size = new System.Drawing.Size(101, 24);
+            this.toolStripMenuItemVendedores.Size = new System.Drawing.Size(101, 26);
             this.toolStripMenuItemVendedores.Text = "Vendedores";
             this.toolStripMenuItemVendedores.Click += new System.EventHandler(this.toolStripMenuItemVendedores_Click);
             // 
             // toolStripMenuItemClientes
             // 
             this.toolStripMenuItemClientes.Name = "toolStripMenuItemClientes";
-            this.toolStripMenuItemClientes.Size = new System.Drawing.Size(75, 24);
+            this.toolStripMenuItemClientes.Size = new System.Drawing.Size(75, 26);
             this.toolStripMenuItemClientes.Text = "Clientes";
             this.toolStripMenuItemClientes.Click += new System.EventHandler(this.toolStripMenuItemClientes_Click);
             // 
@@ -265,7 +265,7 @@ namespace TP4
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(717, 497);
+            this.lblTotal.Location = new System.Drawing.Point(645, 500);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(40, 17);
             this.lblTotal.TabIndex = 23;
@@ -273,10 +273,11 @@ namespace TP4
             // 
             // textBoxTotal
             // 
-            this.textBoxTotal.Location = new System.Drawing.Point(768, 497);
+            this.textBoxTotal.Location = new System.Drawing.Point(691, 497);
+            this.textBoxTotal.MaximumSize = new System.Drawing.Size(177, 22);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.ReadOnly = true;
-            this.textBoxTotal.Size = new System.Drawing.Size(100, 22);
+            this.textBoxTotal.Size = new System.Drawing.Size(177, 22);
             this.textBoxTotal.TabIndex = 24;
             this.textBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -343,6 +344,9 @@ namespace TP4
             this.Controls.Add(this.lblTipoFactura);
             this.Controls.Add(this.menuStripBarraDeHerramientasPrincipal);
             this.MainMenuStrip = this.menuStripBarraDeHerramientasPrincipal;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 588);
+            this.MinimumSize = new System.Drawing.Size(900, 588);
             this.Name = "FrmSistemaDeVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIstema De Venta";

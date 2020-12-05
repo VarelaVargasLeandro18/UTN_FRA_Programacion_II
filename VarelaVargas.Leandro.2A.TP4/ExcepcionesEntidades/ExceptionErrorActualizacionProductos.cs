@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesEntidades
 {
+
+    /// <summary>
+    /// Clase 15. Exceptions.
+    /// Esta exception se lanzará en caso de que los datos de la base de Datos de los Productos no puedan ser obtenidos.
+    /// </summary>
     public class ExceptionErrorActualizacionProductos : Exception
     {
         private static string mensaje = "Error al actualizar Productos. No pudieron obtenerse los datos.";
