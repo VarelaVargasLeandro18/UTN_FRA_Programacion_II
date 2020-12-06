@@ -74,10 +74,22 @@ namespace Test
             Console.WriteLine("Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
+
+            Console.WriteLine("Obteniendo nombre de persona por ID: " + coleccionPersonas.obtenerNombre(32548392));
+            Console.WriteLine("Obteniendo persona por ID: " + coleccionPersonas.obtenerPersona(32548392));
+            Console.WriteLine("Obteniendo DNIs de personas:");
+
+            foreach (int i in coleccionPersonas.obtenerDNIs())
+                Console.WriteLine(i);
+
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
             #endregion
 
             #region Colección de Productos.
             //Creación de Productos.
+            //Los productos podrán ser de cualquier tipo. PERO de la base de datos SOLO pueden traerse productos de tipo 'Comida' y tipo 'Limpieza'
             Console.WriteLine("Creando colección de Productos de Limpieza...");
             Productos<Limpieza> productosDeLimpieza = new Productos<Limpieza>();
             Console.WriteLine("Colección de productos de Limpieza creada.");
@@ -102,6 +114,7 @@ namespace Test
             Console.WriteLine("\n\n");
 
             Console.WriteLine("Intentando agregar " + productoLimpieza.ToString() + "en lista de productos de Comida");
+            
             try
             {
                 if (productosDeComida + productoLimpieza)
@@ -179,11 +192,63 @@ namespace Test
             Console.WriteLine("Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
+
+            Console.WriteLine("Obteniendo nombre de producto por ID: " + productosDeComida.obtenerNombre(2));
+            Console.WriteLine("Obteniendo producto por ID: " + productosDeComida.obtenerProducto(2));
+            Console.WriteLine("Obteniendo IDs de producto (solo de comida):");
+
+            foreach (int i in productosDeComida.obtenerIDs())
+                Console.WriteLine(i);
+
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
             #endregion
 
             #region Creación de Factura
-            #endregion
+            Console.WriteLine("CREACIÓN DE FACTURA");
+            Console.WriteLine("Creamos una lista de productos...");
+            Productos<Producto> productosFactura = new Productos<Producto>();
+            Producto limpieza = productosDeLimpieza.obtenerProducto(1);
+            limpieza.Cantidad = 5;
+            Producto comida = productosDeComida.obtenerProducto(2);
+            comida.Cantidad = 3;
 
+            if (productosFactura + limpieza)
+                Console.WriteLine("Agregado: " + limpieza);
+
+            if (productosFactura + comida)
+                Console.WriteLine("Agregado: " + comida);
+
+            Factura factura = new Factura();
+            factura.Vendedor = vendedorUno;
+            factura.Cliente = clienteUno;
+            factura.Fecha = DateTime.Now;
+            factura.TipoFactura = 'B';
+            factura.Productos = productosFactura;
+
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("RESULTADO DE FACTURA.");
+            Console.WriteLine(factura.ToString());
+
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("Guardamos la factura como archivo txt y xml en Documentos.");
+            
+            factura.GuardarComoTxt();
+            factura.GuardarComoXml();
+            Console.WriteLine("Cuando presione Enter se abrirá la carpeta Mis Documentos...");
+            Console.ReadLine();
+            System.Diagnostics.Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
+            #endregion
         }
     }
 }

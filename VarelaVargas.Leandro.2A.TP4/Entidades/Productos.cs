@@ -57,15 +57,10 @@ namespace Entidades
         public string obtenerNombre(int id)
         {
             string ret = null;
+            T prod = this.obtenerProducto(id);
 
-            foreach (T prod in this.lproductos)
-            {
-                if (prod.ID == id)
-                {
-                    ret = prod.Nombre;
-                    break;
-                }
-            }
+            if (!(prod is null))
+                ret = prod.Nombre;
 
             return ret;
         }
