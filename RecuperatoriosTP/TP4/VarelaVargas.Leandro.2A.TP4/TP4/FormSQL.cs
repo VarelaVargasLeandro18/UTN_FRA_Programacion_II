@@ -11,6 +11,10 @@ using System.Windows.Forms;
 
 namespace TP4
 {
+    /// <summary>
+    /// Clase 24. Eventos.
+    /// Clase 21 y 22. SQL, BD, DataTable y DataAdapter.
+    /// </summary>
     public partial class FormSQL : Form
     {
         private SqlDataAdapter dataAdapter;
@@ -61,6 +65,7 @@ namespace TP4
 
         #region Frm - Load
         /// <summary>
+        /// Clase 21 y 22. SQL y BD.
         /// Inicializa la conexión con la base de datos
         /// </summary>
         /// <param name="sender"></param>
@@ -105,6 +110,7 @@ namespace TP4
 
         #region Tabla - Stock
         /// <summary>
+        /// Clase 21 y 22. DataTable.
         /// Inicializa el DataTable con los nombres de las columnas que corresponden para el Stock
         /// </summary>
         /// <param name="sender"></param>
@@ -121,6 +127,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 21 y 22. SQL, Bases de Datos y DataAdapter.
         /// Inicializa el DataAdapter con los comandos necesarios para la tabla Productos
         /// </summary>
         /// <param name="sender"></param>
@@ -168,6 +175,7 @@ namespace TP4
 
         #region Tabla - Persona
         /// <summary>
+        /// Clase 21 y 22. DataTable.
         /// Inicializa el DataTable con los nombres de las columnas que corresponden para Clientes o Vendedores
         /// </summary>
         /// <param name="sender"></param>
@@ -181,6 +189,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// En caso de que se quiera modificar la columna DNI, la hará de solo lectura para que lance un error.
         /// </summary>
         /// <param name="sender"></param>
@@ -194,6 +203,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 21 y 22. SQL, Bases de Datos y DataAdapter.
         /// Inicializa el DataAdapter con los comandos necesarios para la tabla Clientes o Vendedores según corresponda
         /// </summary>
         /// <param name="sender"></param>

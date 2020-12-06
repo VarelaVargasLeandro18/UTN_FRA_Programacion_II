@@ -14,6 +14,7 @@ namespace TP4
     public static class FacturaExtension
     {
         /// <summary>
+        /// Clase 25. Métodos de Extensión.
         /// Realiza un string customizado a partir de un objeto Factura.
         /// </summary>
         /// <param name="f">objeto Factura</param>

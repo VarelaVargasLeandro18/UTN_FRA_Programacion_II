@@ -77,6 +77,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 21 y 22. SQL Y BD.
         /// Clase 18. Interfaces.
         /// Obtiene todas las personas que se encuentren en la Tabla especificada.
         /// </summary>

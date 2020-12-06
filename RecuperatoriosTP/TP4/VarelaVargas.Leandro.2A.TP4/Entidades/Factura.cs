@@ -11,7 +11,7 @@ namespace Entidades
 {
     /// <summary>
     /// Clase 23. Hilos.
-    /// Clase 17. Archivos y Serialización.
+    /// Clase 19. Archivos y Serialización.
     /// Esta clase contendrá toda la información para la generación de una factura.
     /// Permitirá Serialización y creación de archivos de texto.
     /// </summary>

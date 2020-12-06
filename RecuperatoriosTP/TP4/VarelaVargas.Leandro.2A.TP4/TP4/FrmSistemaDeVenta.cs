@@ -14,15 +14,20 @@ using System.Windows.Forms;
 
 namespace TP4
 {
+    /// <summary>
+    /// Clase 24. Eventos.
+    /// </summary>
     public partial class FrmSistemaDeVenta : Form
     {
         /// <summary>
+        /// Clase 24. Eventos.
         /// Firma con la que deberán cumplir todos los métodos que signifiquen algún tipo de actualización
         /// de los controles del formulario.
         /// </summary>
         private delegate void Actualizaciones();
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Evento de actualización de controles del formulario.
         /// </summary>
         private event Actualizaciones actualizaciones;
@@ -205,6 +210,7 @@ namespace TP4
 
         #region Actualizaciones
         /// <summary>
+        /// Clase 24. Eventos.
         /// Permite que se invoquen actualizaciones desde otra parte.
         /// </summary>
         public void invocarActualizaciones()
@@ -213,6 +219,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Seteará el Combo 'TipoFactura' a su valor por defecto.
         /// </summary>
         private void actualizarTipoFactura()
@@ -221,6 +228,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará las variables de los productos con la Base de Datos.
         /// </summary>
         private void actualizarProductos()
@@ -238,6 +246,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará la variable "clientes" con la Base de Datos.
         /// </summary>
         private void actualizarClientes()
@@ -251,8 +260,9 @@ namespace TP4
                 MessageBox.Show(ex.Message + " - " + ex.InnerException.Message);
             }
         }
-        
+
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará la variables "vendedores" con la Base de Datos.
         /// </summary>
         private void actualizarVendedores()
@@ -267,8 +277,9 @@ namespace TP4
                 MessageBox.Show(ex.Message + " - " + ex.InnerException.Message);
             }
         }
-        
+
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará los ComboBox del Form con los respectivos datos correspondientes.
         /// </summary>
         private void actualizarCombos ()
@@ -280,8 +291,9 @@ namespace TP4
             this.comboBoxCodVendedor.DataSource = this.vendedores.obtenerDNIs();
             this.comboBoxCodProducto.DataSource = idsProductos;
         }
-        
+
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará el "textBoxFecha" con la Fecha y Hora actuales.
         /// </summary>
         private void actualizarFecha ()
@@ -290,6 +302,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará el "textBoxTotal" a 0.
         /// </summary>
         private void actualizarPrecio()
@@ -298,6 +311,7 @@ namespace TP4
         }
 
         /// <summary>
+        /// Clase 24. Eventos.
         /// Actualizará la lista de productos seleccionados.
         /// </summary>
         private void actualizarProductoSeleccionados()
@@ -305,6 +319,10 @@ namespace TP4
             this.productosSeleccionados = new Productos<Producto>();
         }
 
+        /// <summary>
+        /// Clase 24. Eventos.
+        /// Actualizará la tabla a su valor vacío por defecto.
+        /// </summary>
         private void actualizarTabla()
         {
             this.tablaFactura.Clear();

@@ -87,6 +87,7 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 21 y 22. SQL Y BD.
         /// Clase 18. Interfaces.
         /// Obtiene la lista de productos en Stock de la tabla.
         /// </summary>
@@ -163,12 +164,13 @@ namespace Entidades
 
         #region Operadores
         /// <summary>
+        /// Clase 17. Generics.
         /// Agrega un producto.
         /// </summary>
         /// <param name="ps"></param>
         /// <param name="p"></param>
         /// <returns>'True' si la operación es exitosa. 'False' caso contrario.</returns>
-        public static bool operator +(Productos<T> ps, Producto p)
+        public static bool operator +(Productos<T> ps, T p)
         {
             bool ret = !(ps.LProductos.Contains(p)) && !(p is null);
 
@@ -186,12 +188,13 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Clase 17. Generics
         /// Elimina un producto.
         /// </summary>
         /// <param name="ps"></param>
         /// <param name="p"></param>
         /// <returns>'True' si la operación es exitosa. 'False' caso contrario.</returns>
-        public static bool operator -(Productos<T>ps, Producto p)
+        public static bool operator -(Productos<T>ps, T p)
         {
             bool ret = ps.LProductos.Contains(p);
 

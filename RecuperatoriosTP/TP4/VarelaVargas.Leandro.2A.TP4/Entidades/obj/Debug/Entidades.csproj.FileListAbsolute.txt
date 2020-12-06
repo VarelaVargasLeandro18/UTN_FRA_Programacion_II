@@ -8,3 +8,13 @@ C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\En
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.dll
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.pdb
 C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\bin\Debug\ExcepcionesEntidades.pdb
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\lean\Desktop\GIT\UTN_FRA_Programacion_II\RecuperatoriosTP\TP4\VarelaVargas.Leandro.2A.TP4\Entidades\obj\Debug\Entidades.pdb
